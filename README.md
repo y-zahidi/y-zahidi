@@ -1,5 +1,5 @@
 <h1 align="center">Hi, I'm Yassir Zahidi 👋</h1>
-<h3 align="center">Computer Engineering Student @ ISMAGI · Cybersecurity & IT Infrastructure</h3>
+<h3 align="center">Computer Engineering Student · Cybersecurity & IT Infrastructure</h3>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/yassir-zahidi/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"></a>
@@ -11,13 +11,12 @@
 
 ### 🎯 About me
 
-I'm a Computer Engineering student at **ISMAGI (Rabat)**, with a 2-year background as a **Specialized Technician in Digital Infrastructure & Cybersecurity** (ISMO Tétouan). I work at the intersection of **secure systems and clean software** — from deploying SIEM stacks in production to shipping full-stack apps and BI data warehouses.
+I'm a Computer Engineering student, with a 2-year background as a **Specialized Technician in Digital Infrastructure & Cybersecurity** . I work at the intersection of **secure systems and clean software** — from deploying SIEM stacks in production to shipping full-stack apps and BI data warehouses.
 
 - 🛡️ Hands-on with **Wazuh, Suricata, Sysmon, MISP, FortiGate, Nessus, Cisco** networks
 - 💻 I also build software end-to-end: **C++ / Delphi**, **PHP / JS / MySQL**, **WordPress**, **Data Warehouses (MySQL + QlikView)**
 - 🎓 Certified **Cisco CCNA 1-3**, **Fortinet NSE 1-3**, **EC-Council (DFE / EHE / NDE)**, **Orange Cybersec**, **ICSI CNSS**
 - 💼 Open to **PFE / internships / first job 2026** in Cybersecurity, DevSecOps, IT Infrastructure, or Data Engineering — Morocco / EU / Remote
-- 📫 **yassirzahidi8@gmail.com** · 📞 +212 669 855 624
 
 ---
 
@@ -104,4 +103,4 @@ N1/N2 support for **70+ Windows / VPN users** with **99% IT service uptime**. Re
 
 If you're hiring for **cybersecurity, DevSecOps, IT infrastructure, or data engineering** internships — or just want to talk about SIEMs, FortiGate, or building things from scratch — say hi.
 
-🌐 [LinkedIn](https://www.linkedin.com/in/yassir-zahidi/) · 📧 yassirzahidi8@gmail.com · 📞 +212 669 855 624
+🌐 [LinkedIn](https://www.linkedin.com/in/yassir-zahidi/) 
