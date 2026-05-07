@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-label="Live SOC console — streaming alerts and metrics">
+  <title>Live SOC console — home-lab-siem</title>
+  <desc>Mock SOC operator console: streaming alert log, severity donut, EPS sparkline, top-source bar chart, status pills.</desc>
+  <defs>
+    <linearGradient id="con-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#04070d"/>
+      <stop offset="1"   stop-color="#0a1424"/>
+    </linearGradient>
+    <pattern id="con-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#0f1a2c" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="con-accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5cf2c1"/>
+      <stop offset="1" stop-color="#79e2ff"/>
+    </linearGradient>
+    <linearGradient id="spark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5cf2c1" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#5cf2c1" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="logClip"><rect x="32" y="200" width="640" height="232"/></clipPath>
+  </defs>
+
+  <rect width="1200" height="460" fill="url(#con-bg)"/>
+  <rect width="1200" height="460" fill="url(#con-grid)" opacity=".45"/>
+
+  <!-- header strip -->
+  <g font-family="ui-monospace, 'JetBrains Mono', monospace">
+    <text x="32" y="34" font-size="13" fill="#54688a" letter-spacing="3">~ /soc/console</text>
+    <text x="32" y="60" font-size="20" fill="#e2e9f6">home-lab-siem · operator view</text>
+
+    <g transform="translate(820 50)" font-size="12">
+      <g><circle cx="6" cy="-4" r="4" fill="#5cf2c1"><animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/></circle><text x="16" fill="#cfd6e4">wazuh-manager: ok</text></g>
+      <g transform="translate(140 0)"><circle cx="6" cy="-4" r="4" fill="#5cf2c1"><animate attributeName="opacity" values="1;.3;1" dur="1.7s" repeatCount="indefinite"/></circle><text x="16" fill="#cfd6e4">suricata: 0 drops</text></g>
+      <g transform="translate(280 0)"><circle cx="6" cy="-4" r="4" fill="#febc2e"/><text x="16" fill="#cfd6e4">misp: sync 06h</text></g>
+    </g>
+  </g>
+
+  <!-- KPI tiles -->
+  <g transform="translate(32 88)" font-family="ui-monospace, 'JetBrains Mono', monospace">
+    <g><rect width="180" height="86" rx="10" fill="#08111d" stroke="#1f2f4a"/>
+      <text x="14" y="26" font-size="11" fill="#54688a" letter-spacing="2">EPS · LAST 5m</text>
+      <text x="14" y="60" font-size="28" fill="#5cf2c1">1 247</text>
+      <text x="14" y="78" font-size="10" fill="#54688a">peak 2 094 · avg 982</text>
+      <!-- sparkline -->
+      <g transform="translate(96 32)">
+        <polyline points="0,28 8,24 16,26 24,20 32,22 40,15 48,18 56,12 64,14 72,9 80,11" fill="none" stroke="#5cf2c1" stroke-width="1.5"/>
+        <polygon points="0,28 8,24 16,26 24,20 32,22 40,15 48,18 56,12 64,14 72,9 80,11 80,32 0,32" fill="url(#spark)"/>
+      </g>
+    </g>
+
+    <g transform="translate(196 0)"><rect width="180" height="86" rx="10" fill="#08111d" stroke="#1f2f4a"/>
+      <text x="14" y="26" font-size="11" fill="#54688a" letter-spacing="2">ALERTS · 24h</text>
+      <text x="14" y="60" font-size="28" fill="#79e2ff">38</text>
+      <text x="14" y="78" font-size="10" fill="#54688a">3 high · 9 med · 26 low</text>
+      <!-- donut -->
+      <g transform="translate(140 43)">
+        <circle r="22" fill="none" stroke="#1f2f4a" stroke-width="6"/>
+        <circle r="22" fill="none" stroke="#ff5f57" stroke-width="6"
+                stroke-dasharray="11 138" transform="rotate(-90)"/>
+        <circle r="22" fill="none" stroke="#febc2e" stroke-width="6"
+                stroke-dasharray="33 138" stroke-dashoffset="-11" transform="rotate(-90)"/>
+        <circle r="22" fill="none" stroke="#5cf2c1" stroke-width="6"
+                stroke-dasharray="94 138" stroke-dashoffset="-44" transform="rotate(-90)"/>
+      </g>
+    </g>
+
+    <g transform="translate(392 0)"><rect width="180" height="86" rx="10" fill="#08111d" stroke="#1f2f4a"/>
+      <text x="14" y="26" font-size="11" fill="#54688a" letter-spacing="2">RULES SHIPPED</text>
+      <text x="14" y="60" font-size="28" fill="#5cf2c1">22</text>
+      <text x="14" y="78" font-size="10" fill="#54688a">12 wazuh · 6 sigma · 4 suricata</text>
+    </g>
+
+    <g transform="translate(588 0)"><rect width="180" height="86" rx="10" fill="#08111d" stroke="#1f2f4a"/>
+      <text x="14" y="26" font-size="11" fill="#54688a" letter-spacing="2">MTTD · MED.</text>
+      <text x="14" y="60" font-size="28" fill="#79e2ff">37s</text>
+      <text x="14" y="78" font-size="10" fill="#54688a">atomic-red-team · 31 tests</text>
+    </g>
+
+    <g transform="translate(784 0)"><rect width="180" height="86" rx="10" fill="#08111d" stroke="#1f2f4a"/>
+      <text x="14" y="26" font-size="11" fill="#54688a" letter-spacing="2">IOC FEEDS</text>
+      <text x="14" y="60" font-size="28" fill="#5cf2c1">7</text>
+      <text x="14" y="78" font-size="10" fill="#54688a">circl · abuse.ch · vt · feodo</text>
+    </g>
+
+    <g transform="translate(980 0)"><rect width="156" height="86" rx="10" fill="#08111d" stroke="#1f2f4a"/>
+      <text x="14" y="26" font-size="11" fill="#54688a" letter-spacing="2">UPTIME</text>
+      <text x="14" y="60" font-size="28" fill="#5cf2c1">99.4%</text>
+      <text x="14" y="78" font-size="10" fill="#54688a">last 30 days</text>
+    </g>
+  </g>
+
+  <!-- streaming log panel -->
+  <g transform="translate(32 196)">
+    <rect width="640" height="240" rx="10" fill="#08111d" stroke="#1f2f4a"/>
+    <text x="14" y="20" font-family="ui-monospace, monospace" font-size="11" fill="#54688a" letter-spacing="2">tail -f /var/ossec/logs/alerts/alerts.log</text>
+  </g>
+  <g clip-path="url(#logClip)" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="11">
+    <g transform="translate(46 232)">
+      <animateTransform attributeName="transform" type="translate" values="46,432; 46,-180" dur="22s" repeatCount="indefinite"/>
+      <g><text fill="#54688a">22:01:14</text><text x="60" fill="#5cf2c1">level=10</text><text x="130" fill="#cfd6e4">100210 Imposs.-travel sign-in · user=jdoe FR→VN</text></g>
+      <g transform="translate(0 18)"><text fill="#54688a">22:01:38</text><text x="60" fill="#79e2ff">level=7 </text><text x="130" fill="#cfd6e4">092115 Sysmon · suspicious child of winword.exe</text></g>
+      <g transform="translate(0 36)"><text fill="#54688a">22:02:02</text><text x="60" fill="#5cf2c1">level=10</text><text x="130" fill="#cfd6e4">100245 LSASS handle from non-system process</text></g>
+      <g transform="translate(0 54)"><text fill="#54688a">22:02:21</text><text x="60" fill="#febc2e">level=5 </text><text x="130" fill="#cfd6e4">FortiGate · DNS query to known abuse.ch C2 domain</text></g>
+      <g transform="translate(0 72)"><text fill="#54688a">22:02:43</text><text x="60" fill="#79e2ff">level=7 </text><text x="130" fill="#cfd6e4">Suricata · ET TROJAN cobalt-strike beacon (sid:2034567)</text></g>
+      <g transform="translate(0 90)"><text fill="#54688a">22:03:04</text><text x="60" fill="#5cf2c1">level=10</text><text x="130" fill="#cfd6e4">100302 4625×40 from 10.10.20.7 (smb-brute candidate)</text></g>
+      <g transform="translate(0 108)"><text fill="#54688a">22:03:22</text><text x="60" fill="#79e2ff">level=7 </text><text x="130" fill="#cfd6e4">100410 Kerberoast · TGS req for svc_sql</text></g>
+      <g transform="translate(0 126)"><text fill="#54688a">22:03:48</text><text x="60" fill="#febc2e">level=5 </text><text x="130" fill="#cfd6e4">100501 Disable Win Defender · powershell ExecPolicy bypass</text></g>
+      <g transform="translate(0 144)"><text fill="#54688a">22:04:11</text><text x="60" fill="#5cf2c1">level=10</text><text x="130" fill="#cfd6e4">100210 Imposs.-travel · user=admin DE→BR (geoip drift 41.2°)</text></g>
+      <g transform="translate(0 162)"><text fill="#54688a">22:04:36</text><text x="60" fill="#79e2ff">level=7 </text><text x="130" fill="#cfd6e4">100702 RDP from non-admin subnet · src=10.20.0.42</text></g>
+      <g transform="translate(0 180)"><text fill="#54688a">22:05:02</text><text x="60" fill="#febc2e">level=5 </text><text x="130" fill="#cfd6e4">MISP · IoC hit · sha256=9f3c…b21 (apt29 · medium conf.)</text></g>
+      <g transform="translate(0 198)"><text fill="#54688a">22:05:27</text><text x="60" fill="#5cf2c1">level=10</text><text x="130" fill="#cfd6e4">100245 Mimikatz signature in scheduled task xml</text></g>
+      <g transform="translate(0 216)"><text fill="#54688a">22:05:51</text><text x="60" fill="#79e2ff">level=7 </text><text x="130" fill="#cfd6e4">FortiGate · IPS critical · CVE-2024-21762 attempt blocked</text></g>
+      <g transform="translate(0 234)"><text fill="#54688a">22:06:14</text><text x="60" fill="#5cf2c1">level=10</text><text x="130" fill="#cfd6e4">100210 Imposs.-travel sign-in · user=jdoe FR→VN</text></g>
+      <g transform="translate(0 252)"><text fill="#54688a">22:06:38</text><text x="60" fill="#79e2ff">level=7 </text><text x="130" fill="#cfd6e4">092115 Sysmon · suspicious child of winword.exe</text></g>
+    </g>
+  </g>
+
+  <!-- top sources bar chart -->
+  <g transform="translate(692 196)" font-family="ui-monospace, 'JetBrains Mono', monospace">
+    <rect width="476" height="240" rx="10" fill="#08111d" stroke="#1f2f4a"/>
+    <text x="14" y="20" font-size="11" fill="#54688a" letter-spacing="2">top sources · 24h</text>
+
+    <g transform="translate(14 44)" font-size="11">
+      <text fill="#cfd6e4">FortiGate IPS</text><text x="448" text-anchor="end" fill="#5cf2c1">412</text>
+      <rect y="6" width="448" height="6" rx="3" fill="#0f1a2c"/>
+      <rect y="6" width="448" height="6" rx="3" fill="url(#con-accent)"/>
+    </g>
+    <g transform="translate(14 76)" font-size="11">
+      <text fill="#cfd6e4">Suricata (eth1)</text><text x="448" text-anchor="end" fill="#5cf2c1">298</text>
+      <rect y="6" width="448" height="6" rx="3" fill="#0f1a2c"/>
+      <rect y="6" width="324" height="6" rx="3" fill="url(#con-accent)"/>
+    </g>
+    <g transform="translate(14 108)" font-size="11">
+      <text fill="#cfd6e4">Sysmon (DC01)</text><text x="448" text-anchor="end" fill="#5cf2c1">214</text>
+      <rect y="6" width="448" height="6" rx="3" fill="#0f1a2c"/>
+      <rect y="6" width="232" height="6" rx="3" fill="url(#con-accent)"/>
+    </g>
+    <g transform="translate(14 140)" font-size="11">
+      <text fill="#cfd6e4">Sysmon (WS-7)</text><text x="448" text-anchor="end" fill="#5cf2c1">157</text>
+      <rect y="6" width="448" height="6" rx="3" fill="#0f1a2c"/>
+      <rect y="6" width="170" height="6" rx="3" fill="url(#con-accent)"/>
+    </g>
+    <g transform="translate(14 172)" font-size="11">
+      <text fill="#cfd6e4">Auditd (siem-01)</text><text x="448" text-anchor="end" fill="#5cf2c1">94</text>
+      <rect y="6" width="448" height="6" rx="3" fill="#0f1a2c"/>
+      <rect y="6" width="102" height="6" rx="3" fill="url(#con-accent)"/>
+    </g>
+    <g transform="translate(14 204)" font-size="11">
+      <text fill="#cfd6e4">MISP correlations</text><text x="448" text-anchor="end" fill="#5cf2c1">72</text>
+      <rect y="6" width="448" height="6" rx="3" fill="#0f1a2c"/>
+      <rect y="6" width="78" height="6" rx="3" fill="url(#con-accent)"/>
+    </g>
+  </g>
+
+  <!-- bottom prompt -->
+  <g transform="translate(32 448)" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="11" fill="#54688a">
+    <text>data is illustrative · architecture matches Préfecture de Tétouan deployment · validated weekly with atomic-red-team</text>
+  </g>
+</svg>

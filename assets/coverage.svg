@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" width="1200" height="540" role="img" aria-label="MITRE ATT&amp;CK detection coverage matrix — home-lab-siem">
+  <title>MITRE ATT&amp;CK detection coverage — home-lab-siem</title>
+  <desc>Heatmap of MITRE ATT&amp;CK Enterprise tactics with cells shaded by current detection coverage in the home-lab-siem ruleset.</desc>
+  <defs>
+    <linearGradient id="cov-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#04070d"/>
+      <stop offset="1"   stop-color="#0a1424"/>
+    </linearGradient>
+    <pattern id="cov-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#0f1a2c" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="cov-accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5cf2c1"/>
+      <stop offset="1" stop-color="#79e2ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="540" fill="url(#cov-bg)"/>
+  <rect width="1200" height="540" fill="url(#cov-grid)" opacity=".45"/>
+
+  <!-- header -->
+  <g font-family="ui-monospace, 'JetBrains Mono', monospace">
+    <text x="32" y="40" font-size="13" fill="#54688a" letter-spacing="3">~ /detection/coverage</text>
+    <text x="32" y="68" font-size="20" fill="#e2e9f6">MITRE ATT&amp;CK — home-lab-siem coverage</text>
+    <text x="32" y="90" font-size="12" fill="#8ea0bd">22 rules shipped · 12 tactics observed · last sync 06h ago</text>
+
+    <!-- legend -->
+    <g transform="translate(820 56)" font-size="11" fill="#8ea0bd">
+      <text>none</text>
+      <rect x="40"  y="-10" width="22" height="14" rx="2" fill="#0f1a2c" stroke="#1f2f4a"/>
+      <rect x="66"  y="-10" width="22" height="14" rx="2" fill="#163d3a" stroke="#1f2f4a"/>
+      <rect x="92"  y="-10" width="22" height="14" rx="2" fill="#1f6f63" stroke="#1f2f4a"/>
+      <rect x="118" y="-10" width="22" height="14" rx="2" fill="#3eb39a" stroke="#1f2f4a"/>
+      <rect x="144" y="-10" width="22" height="14" rx="2" fill="#5cf2c1" stroke="#1f2f4a"/>
+      <text x="174">full</text>
+    </g>
+  </g>
+
+  <!-- matrix: 12 tactics x 8 techniques. coverage values 0..4 -->
+  <!-- Row template: y = 130 + i*32. Label width 220. Cells start at x=240, w=110, gap 6 -->
+  <g font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="12" fill="#cfd6e4">
+    <!-- Initial Access -->
+    <g transform="translate(0 130)">
+      <text x="32" y="14" fill="#79e2ff">Initial Access</text>
+      <g transform="translate(240 0)">
+        <rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">Phishing</text>
+        <rect x="106" width="100" height="22" rx="3" fill="#5cf2c1"/><text x="112" y="15" fill="#04070d">Valid Acc.</text>
+        <rect x="212" width="100" height="22" rx="3" fill="#1f6f63"/><text x="218" y="15" fill="#cfd6e4">Ext. Remote</text>
+        <rect x="318" width="100" height="22" rx="3" fill="#163d3a"/><text x="324" y="15" fill="#cfd6e4">Drive-by</text>
+        <rect x="424" width="100" height="22" rx="3" fill="#1f6f63"/><text x="430" y="15" fill="#cfd6e4">Supply Chain</text>
+        <rect x="530" width="100" height="22" rx="3" fill="#3eb39a"/><text x="536" y="15" fill="#04070d">Trusted Rel.</text>
+        <rect x="636" width="100" height="22" rx="3" fill="#0f1a2c" stroke="#1f2f4a"/><text x="642" y="15" fill="#54688a">Hardware</text>
+        <rect x="742" width="100" height="22" rx="3" fill="#163d3a"/><text x="748" y="15" fill="#cfd6e4">Replication</text>
+      </g>
+    </g>
+    <!-- Execution -->
+    <g transform="translate(0 162)">
+      <text x="32" y="14" fill="#79e2ff">Execution</text>
+      <g transform="translate(240 0)">
+        <rect width="100" height="22" rx="3" fill="#5cf2c1"/><text x="6" y="15" fill="#04070d">Cmd Shell</text>
+        <rect x="106" width="100" height="22" rx="3" fill="#5cf2c1"/><text x="112" y="15" fill="#04070d">PowerShell</text>
+        <rect x="212" width="100" height="22" rx="3" fill="#3eb39a"/><text x="218" y="15" fill="#04070d">WMI</text>
+        <rect x="318" width="100" height="22" rx="3" fill="#1f6f63"/><text x="324" y="15" fill="#cfd6e4">Sched. Task</text>
+        <rect x="424" width="100" height="22" rx="3" fill="#3eb39a"/><text x="430" y="15" fill="#04070d">User Exec.</text>
+        <rect x="530" width="100" height="22" rx="3" fill="#1f6f63"/><text x="536" y="15" fill="#cfd6e4">Service Exec.</text>
+        <rect x="636" width="100" height="22" rx="3" fill="#163d3a"/><text x="642" y="15" fill="#cfd6e4">Container</text>
+        <rect x="742" width="100" height="22" rx="3" fill="#163d3a"/><text x="748" y="15" fill="#cfd6e4">XSL Process.</text>
+      </g>
+    </g>
+    <!-- Persistence -->
+    <g transform="translate(0 194)">
+      <text x="32" y="14" fill="#79e2ff">Persistence</text>
+      <g transform="translate(240 0)">
+        <rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">Reg. Run Key</text>
+        <rect x="106" width="100" height="22" rx="3" fill="#5cf2c1"/><text x="112" y="15" fill="#04070d">Sched. Task</text>
+        <rect x="212" width="100" height="22" rx="3" fill="#1f6f63"/><text x="218" y="15" fill="#cfd6e4">Service Inst.</text>
+        <rect x="318" width="100" height="22" rx="3" fill="#1f6f63"/><text x="324" y="15" fill="#cfd6e4">WMI Sub.</text>
+        <rect x="424" width="100" height="22" rx="3" fill="#163d3a"/><text x="430" y="15" fill="#cfd6e4">Bootkit</text>
+        <rect x="530" width="100" height="22" rx="3" fill="#3eb39a"/><text x="536" y="15" fill="#04070d">Acc. Manip.</text>
+        <rect x="636" width="100" height="22" rx="3" fill="#163d3a"/><text x="642" y="15" fill="#cfd6e4">Hijack Flow</text>
+        <rect x="742" width="100" height="22" rx="3" fill="#163d3a"/><text x="748" y="15" fill="#cfd6e4">Office App</text>
+      </g>
+    </g>
+    <!-- Privilege Escalation -->
+    <g transform="translate(0 226)">
+      <text x="32" y="14" fill="#79e2ff">Privilege Esc.</text>
+      <g transform="translate(240 0)">
+        <rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">UAC Bypass</text>
+        <rect x="106" width="100" height="22" rx="3" fill="#1f6f63"/><text x="112" y="15" fill="#cfd6e4">Token Imp.</text>
+        <rect x="212" width="100" height="22" rx="3" fill="#163d3a"/><text x="218" y="15" fill="#cfd6e4">Bootkit</text>
+        <rect x="318" width="100" height="22" rx="3" fill="#3eb39a"/><text x="324" y="15" fill="#04070d">Sched. Task</text>
+        <rect x="424" width="100" height="22" rx="3" fill="#1f6f63"/><text x="430" y="15" fill="#cfd6e4">Pr. Inj.</text>
+        <rect x="530" width="100" height="22" rx="3" fill="#163d3a"/><text x="536" y="15" fill="#cfd6e4">DLL Sideload</text>
+        <rect x="636" width="100" height="22" rx="3" fill="#0f1a2c" stroke="#1f2f4a"/><text x="642" y="15" fill="#54688a">Setuid</text>
+        <rect x="742" width="100" height="22" rx="3" fill="#163d3a"/><text x="748" y="15" fill="#cfd6e4">Sudo</text>
+      </g>
+    </g>
+    <!-- Defense Evasion -->
+    <g transform="translate(0 258)">
+      <text x="32" y="14" fill="#79e2ff">Defense Evasion</text>
+      <g transform="translate(240 0)">
+        <rect width="100" height="22" rx="3" fill="#5cf2c1"/><text x="6" y="15" fill="#04070d">Disable Tools</text>
+        <rect x="106" width="100" height="22" rx="3" fill="#3eb39a"/><text x="112" y="15" fill="#04070d">Clear Logs</text>
+        <rect x="212" width="100" height="22" rx="3" fill="#1f6f63"/><text x="218" y="15" fill="#cfd6e4">Masquerading</text>
+        <rect x="318" width="100" height="22" rx="3" fill="#3eb39a"/><text x="324" y="15" fill="#04070d">Obfusc. Files</text>
+        <rect x="424" width="100" height="22" rx="3" fill="#1f6f63"/><text x="430" y="15" fill="#cfd6e4">Modify Reg.</text>
+        <rect x="530" width="100" height="22" rx="3" fill="#163d3a"/><text x="536" y="15" fill="#cfd6e4">Rootkit</text>
+        <rect x="636" width="100" height="22" rx="3" fill="#163d3a"/><text x="642" y="15" fill="#cfd6e4">VM/Sandbox</text>
+        <rect x="742" width="100" height="22" rx="3" fill="#1f6f63"/><text x="748" y="15" fill="#cfd6e4">Indicator Rem.</text>
+      </g>
+    </g>
+    <!-- Credential Access -->
+    <g transform="translate(0 290)">
+      <text x="32" y="14" fill="#79e2ff">Credential Access</text>
+      <g transform="translate(240 0)">
+        <rect width="100" height="22" rx="3" fill="#5cf2c1"/><text x="6" y="15" fill="#04070d">Brute Force</text>
+        <rect x="106" width="100" height="22" rx="3" fill="#5cf2c1"/><text x="112" y="15" fill="#04070d">LSASS Dump</text>
+        <rect x="212" width="100" height="22" rx="3" fill="#3eb39a"/><text x="218" y="15" fill="#04070d">Kerberoast</text>
+        <rect x="318" width="100" height="22" rx="3" fill="#3eb39a"/><text x="324" y="15" fill="#04070d">DCSync</text>
+        <rect x="424" width="100" height="22" rx="3" fill="#1f6f63"/><text x="430" y="15" fill="#cfd6e4">Cred. Files</text>
+        <rect x="530" width="100" height="22" rx="3" fill="#3eb39a"/><text x="536" y="15" fill="#04070d">Imposs. Travel</text>
+        <rect x="636" width="100" height="22" rx="3" fill="#163d3a"/><text x="642" y="15" fill="#cfd6e4">Forge Token</text>
+        <rect x="742" width="100" height="22" rx="3" fill="#163d3a"/><text x="748" y="15" fill="#cfd6e4">Keylogging</text>
+      </g>
+    </g>
+    <!-- Discovery -->
+    <g transform="translate(0 322)">
+      <text x="32" y="14" fill="#79e2ff">Discovery</text>
+      <g transform="translate(240 0)">
+        <rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">Net Shares</text>
+        <rect x="106" width="100" height="22" rx="3" fill="#3eb39a"/><text x="112" y="15" fill="#04070d">Acc. Discov.</text>
+        <rect x="212" width="100" height="22" rx="3" fill="#1f6f63"/><text x="218" y="15" fill="#cfd6e4">Sys Info.</text>
+        <rect x="318" width="100" height="22" rx="3" fill="#1f6f63"/><text x="324" y="15" fill="#cfd6e4">Pr. Discov.</text>
+        <rect x="424" width="100" height="22" rx="3" fill="#3eb39a"/><text x="430" y="15" fill="#04070d">Domain Trust</text>
+        <rect x="530" width="100" height="22" rx="3" fill="#163d3a"/><text x="536" y="15" fill="#cfd6e4">Cloud Inf.</text>
+        <rect x="636" width="100" height="22" rx="3" fill="#163d3a"/><text x="642" y="15" fill="#cfd6e4">Container API</text>
+        <rect x="742" width="100" height="22" rx="3" fill="#1f6f63"/><text x="748" y="15" fill="#cfd6e4">Net Sniffing</text>
+      </g>
+    </g>
+    <!-- Lateral Movement -->
+    <g transform="translate(0 354)">
+      <text x="32" y="14" fill="#79e2ff">Lateral Movement</text>
+      <g transform="translate(240 0)">
+        <rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">RDP</text>
+        <rect x="106" width="100" height="22" rx="3" fill="#3eb39a"/><text x="112" y="15" fill="#04070d">SMB / Admin$</text>
+        <rect x="212" width="100" height="22" rx="3" fill="#1f6f63"/><text x="218" y="15" fill="#cfd6e4">PSExec</text>
+        <rect x="318" width="100" height="22" rx="3" fill="#1f6f63"/><text x="324" y="15" fill="#cfd6e4">SSH</text>
+        <rect x="424" width="100" height="22" rx="3" fill="#163d3a"/><text x="430" y="15" fill="#cfd6e4">Pass-Hash</text>
+        <rect x="530" width="100" height="22" rx="3" fill="#163d3a"/><text x="536" y="15" fill="#cfd6e4">Pass-Ticket</text>
+        <rect x="636" width="100" height="22" rx="3" fill="#163d3a"/><text x="642" y="15" fill="#cfd6e4">Cloud Pivot</text>
+        <rect x="742" width="100" height="22" rx="3" fill="#163d3a"/><text x="748" y="15" fill="#cfd6e4">Repl. Storage</text>
+      </g>
+    </g>
+    <!-- Collection -->
+    <g transform="translate(0 386)">
+      <text x="32" y="14" fill="#79e2ff">Collection</text>
+      <g transform="translate(240 0)">
+        <rect width="100" height="22" rx="3" fill="#1f6f63"/><text x="6" y="15" fill="#cfd6e4">Local Data</text>
+        <rect x="106" width="100" height="22" rx="3" fill="#1f6f63"/><text x="112" y="15" fill="#cfd6e4">Net Drive</text>
+        <rect x="212" width="100" height="22" rx="3" fill="#163d3a"/><text x="218" y="15" fill="#cfd6e4">Email</text>
+        <rect x="318" width="100" height="22" rx="3" fill="#163d3a"/><text x="324" y="15" fill="#cfd6e4">Clipboard</text>
+        <rect x="424" width="100" height="22" rx="3" fill="#163d3a"/><text x="430" y="15" fill="#cfd6e4">Screen Cap.</text>
+        <rect x="530" width="100" height="22" rx="3" fill="#163d3a"/><text x="536" y="15" fill="#cfd6e4">Audio Cap.</text>
+        <rect x="636" width="100" height="22" rx="3" fill="#0f1a2c" stroke="#1f2f4a"/><text x="642" y="15" fill="#54688a">Browser Sess.</text>
+        <rect x="742" width="100" height="22" rx="3" fill="#0f1a2c" stroke="#1f2f4a"/><text x="748" y="15" fill="#54688a">Cloud Stor.</text>
+      </g>
+    </g>
+    <!-- Command & Control -->
+    <g transform="translate(0 418)">
+      <text x="32" y="14" fill="#79e2ff">Command &amp; Control</text>
+      <g transform="translate(240 0)">
+        <rect width="100" height="22" rx="3" fill="#5cf2c1"/><text x="6" y="15" fill="#04070d">App Layer</text>
+        <rect x="106" width="100" height="22" rx="3" fill="#3eb39a"/><text x="112" y="15" fill="#04070d">DNS Tunnel</text>
+        <rect x="212" width="100" height="22" rx="3" fill="#3eb39a"/><text x="218" y="15" fill="#04070d">Web Beacon</text>
+        <rect x="318" width="100" height="22" rx="3" fill="#1f6f63"/><text x="324" y="15" fill="#cfd6e4">Encrypt Ch.</text>
+        <rect x="424" width="100" height="22" rx="3" fill="#1f6f63"/><text x="430" y="15" fill="#cfd6e4">Non-std. Port</text>
+        <rect x="530" width="100" height="22" rx="3" fill="#3eb39a"/><text x="536" y="15" fill="#04070d">Proxy / Tor</text>
+        <rect x="636" width="100" height="22" rx="3" fill="#163d3a"/><text x="642" y="15" fill="#cfd6e4">Domain Gen.</text>
+        <rect x="742" width="100" height="22" rx="3" fill="#163d3a"/><text x="748" y="15" fill="#cfd6e4">Fallback Ch.</text>
+      </g>
+    </g>
+    <!-- Exfiltration -->
+    <g transform="translate(0 450)">
+      <text x="32" y="14" fill="#79e2ff">Exfiltration</text>
+      <g transform="translate(240 0)">
+        <rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">Over C2</text>
+        <rect x="106" width="100" height="22" rx="3" fill="#1f6f63"/><text x="112" y="15" fill="#cfd6e4">Web Service</text>
+        <rect x="212" width="100" height="22" rx="3" fill="#1f6f63"/><text x="218" y="15" fill="#cfd6e4">Alt. Protocol</text>
+        <rect x="318" width="100" height="22" rx="3" fill="#163d3a"/><text x="324" y="15" fill="#cfd6e4">DNS Exfil</text>
+        <rect x="424" width="100" height="22" rx="3" fill="#163d3a"/><text x="430" y="15" fill="#cfd6e4">Phys. Medium</text>
+        <rect x="530" width="100" height="22" rx="3" fill="#163d3a"/><text x="536" y="15" fill="#cfd6e4">Scheduled</text>
+        <rect x="636" width="100" height="22" rx="3" fill="#0f1a2c" stroke="#1f2f4a"/><text x="642" y="15" fill="#54688a">Air-gap</text>
+        <rect x="742" width="100" height="22" rx="3" fill="#163d3a"/><text x="748" y="15" fill="#cfd6e4">Cloud Acc.</text>
+      </g>
+    </g>
+    <!-- Impact -->
+    <g transform="translate(0 482)">
+      <text x="32" y="14" fill="#79e2ff">Impact</text>
+      <g transform="translate(240 0)">
+        <rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">Data Encrypt.</text>
+        <rect x="106" width="100" height="22" rx="3" fill="#1f6f63"/><text x="112" y="15" fill="#cfd6e4">Service Stop</text>
+        <rect x="212" width="100" height="22" rx="3" fill="#1f6f63"/><text x="218" y="15" fill="#cfd6e4">Acc. Lockout</text>
+        <rect x="318" width="100" height="22" rx="3" fill="#163d3a"/><text x="324" y="15" fill="#cfd6e4">Deface</text>
+        <rect x="424" width="100" height="22" rx="3" fill="#163d3a"/><text x="430" y="15" fill="#cfd6e4">Endpoint DoS</text>
+        <rect x="530" width="100" height="22" rx="3" fill="#163d3a"/><text x="536" y="15" fill="#cfd6e4">Resource Hij.</text>
+        <rect x="636" width="100" height="22" rx="3" fill="#163d3a"/><text x="642" y="15" fill="#cfd6e4">Disk Wipe</text>
+        <rect x="742" width="100" height="22" rx="3" fill="#163d3a"/><text x="748" y="15" fill="#cfd6e4">Inhibit Recov.</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- footer -->
+  <text x="32" y="525" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="11" fill="#54688a" letter-spacing="2">source: github.com/y-zahidi/home-lab-siem · sigma + wazuh + suricata · validated with atomic-red-team</text>
+</svg>
