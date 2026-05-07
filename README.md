@@ -7,7 +7,7 @@
 -->
 
 <a href="https://y-zahidi.github.io">
-  <img src="banner.svg" alt="Yassir Zahidi — Cybersecurity engineer-in-training · SOC / blue team / detection engineering" />
+  <img src="banner.svg" alt="Yassir Zahidi — Cybersecurity engineer-in-training · blue + red + purple — SOC, detection engineering, pentest" />
 </a>
 
 <p align="center">
@@ -16,17 +16,21 @@
   <a href="https://www.linkedin.com/in/yassir-zahidi/"><img alt="linkedin" src="https://img.shields.io/badge/linkedin-yassir--zahidi-79e2ff?style=flat-square&labelColor=04070d"/></a>
   <a href="mailto:yassirzahidi8@gmail.com"><img alt="mail" src="https://img.shields.io/badge/mail-yassirzahidi8%40gmail.com-cfd6e4?style=flat-square&labelColor=04070d"/></a>
   <img alt="status" src="https://img.shields.io/badge/status-shipping-5cf2c1?style=flat-square&labelColor=04070d"/>
-  <img alt="available" src="https://img.shields.io/badge/available-may%202026-febc2e?style=flat-square&labelColor=04070d"/>
+  <img alt="available" src="https://img.shields.io/badge/available-now-5cf2c1?style=flat-square&labelColor=04070d"/>
+  <img alt="location" src="https://img.shields.io/badge/location-Morocco-79e2ff?style=flat-square&labelColor=04070d"/>
+  <img alt="colors" src="https://img.shields.io/badge/colors-blue%20%2B%20red%20%2B%20purple-a78bfa?style=flat-square&labelColor=04070d"/>
 </p>
 
 ```text
 $ whoami && cat /etc/role && cat /etc/looking-for
 yassir.zahidi
 specialized-technician-cybersecurity → computer-engineering-student
-SOC / blue-team / DevSecOps internship — 2026 — Morocco · EU · remote
+SOC · detection-engineering · pentest · purple-team — open · Morocco · EU · remote
 ```
 
-I deploy and run the kind of stack a small SOC actually uses: **Wazuh + Suricata + Sysmon + MISP + VirusTotal**, fronted by a **FortiGate** firewall and validated weekly with **Nessus**. I built that for real in May 2024 at the **Préfecture de Tétouan (SSIC, Ministère de l'Intérieur)**. The reproducible lab version lives on this profile — `docker compose up` and the SOC is online.
+I deploy and run the kind of stack a small SOC actually uses — **Wazuh + Suricata + Sysmon + MISP + VirusTotal**, fronted by a **FortiGate** firewall and validated weekly with **Nessus** — then I attack it on purpose to see what it misses. The defensive side I built for real in May 2024 at the **Préfecture de Tétouan (SSIC, Ministère de l'Intérieur)**; the offensive muscle I sharpen on TryHackMe / HackTheBox / CTFs and inside my own lab segment. Reproducible version lives on this profile — `docker compose up` and the SOC is online.
+
+I like working at the seam: writing the rule, then writing the payload that beats the rule, then writing the better rule. **Blue** is the day job. **Red** is the gym. **Purple** is the loop.
 
 This page is a living operator console. Every section below is something I'd actually have open on a screen during a shift.
 
@@ -43,13 +47,15 @@ This page is a living operator console. Every section below is something I'd act
 ### `cat /now`
 
 ```yaml
-location:    Rabat, Morocco
-working_on:  home-lab-siem (atomic-red-team validation · MISP correlation)
+location:    Morocco
+timezone:    Africa/Casablanca · GMT+1
+blue:        home-lab-siem (atomic-red-team validation · MISP correlation · sigma pipeline)
+red:         OSCP path · Active Directory pivoting · web/AD machines on HTB + THM weekly
+purple:      every red find is a new wazuh rule the next day — documented in ctf-writeups
 shipping:    custom Wazuh decoders for FortiGate + Sysmon channel
-learning:    OSCP path · Active Directory pivoting · DFIR (Velociraptor)
-reading:     "The Practice of Network Security Monitoring" — Bejtlich
+reading:     "The Practice of Network Security Monitoring" — Bejtlich · "The Hacker Playbook 3"
 listening:   ColorADD · Maâlem Hamid el Kasri · Caravan Palace
-available:   May 2026 onwards · open to remote / EU / Morocco
+available:   open — remote / EU / Morocco · respond < 24h
 contact:     yassirzahidi8@gmail.com
 ```
 
@@ -58,6 +64,8 @@ contact:     yassirzahidi8@gmail.com
 ### `cat /pipeline/home-lab-siem.mmd`
 
 How a single suspicious sign-in travels from the host to a triaged ticket — the actual flow that runs in [home-lab-siem](https://github.com/y-zahidi/home-lab-siem).
+
+<!-- ctf{2/3} flag{yz_alerts_are_just_questions_we_finally_answered} — nice. one to go: open the portfolio, hit `:` and try `:flag`. -->
 
 ```mermaid
 flowchart LR
@@ -172,6 +180,22 @@ The grid is honest: **bright = I have a rule shipping today**, **dim = on the ro
 
 ---
 
+### `cat /etc/playbook`
+
+What actually happens between *"a rule fired"* and *"the ticket is closed"*. Six stages, with the time-budget I personally hold myself to before escalating. The same shape applies whether it's an SSH brute-force or an LSASS dump.
+
+<img src="assets/playbook.svg" alt="Incident response playbook — alert → triage → contain → eradicate → recover → review with time budgets per stage" />
+
+---
+
+### `cat /uptime`
+
+What the lab looks like, right now — same panel I'd glance at first thing in the morning on a real shift. Seven days of synthetic uptime per component, last 50 alerts feed.
+
+<img src="assets/uptime.svg" alt="Lab uptime panel — wazuh-mgr, suricata, fortigate, sysmon, MISP, VT, CIRCL with 7-day sparklines" />
+
+---
+
 ### `ls production-experience/`
 
 <details open>
@@ -226,7 +250,7 @@ Also: [HTMLCamp](https://github.com/y-zahidi/HTMLCamp) · [Rabat-Cultural-Websit
 | Fortinet | FCF · NSE 1 · NSE 2 · NSE 3 |
 | EC-Council | DFE *(Digital Forensics)* · EHE *(Ethical Hacking)* · NDE *(Network Defense)* |
 | ICSI | Certified Network Security Specialist (CNSS) |
-| Orange Digital Center | Cybersecurity — Rabat |
+| Orange Digital Center | Cybersecurity — Morocco |
 | French Embassy | DELF B2 — Diplôme d'Études en Langue Française (2025) |
 
 ---
@@ -235,11 +259,12 @@ Also: [HTMLCamp](https://github.com/y-zahidi/HTMLCamp) · [Rabat-Cultural-Websit
 
 ```text
 1. detection without telemetry is theater
-2. write the runbook before you need it
-3. every alert ships with its own triage steps and mitre id
-4. an alert nobody reads is worse than no alert
-5. document the falsepositive that almost fooled you, by name
-6. blue team wins on boring tuesdays — not in incident war rooms
+2. the best detection is a friendly red team — attack your own rules first
+3. every alert ships with triage steps, a mitre id, and the payload that proves it fires
+4. write the runbook before you need it; rehearse it with atomic-red-team
+5. an alert nobody reads is worse than no alert
+6. document the falsepositive that almost fooled you, by name
+7. blue is the day job, red is the gym, purple is the loop — you don't get to skip leg day
 ```
 
 ---
@@ -256,7 +281,9 @@ connection closed by foreign host.
 <!--
   ───────────────────────────────────────────────────────────────────────
   if you read source you're already half a SOC analyst.
-  flag{yz_read_my_decoders_-_let_us_talk}
-  signal me. coffee on me in Rabat.
+  ctf{1/3} → flag{yz_read_my_decoders_-_let_us_talk}
+  hint   → ctf{2/3} hides in /pipeline/home-lab-siem.mmd
+  hint   → ctf{3/3} hides on the portfolio site, behind a vim cmdline
+  signal me. the coffee is on me.
   ───────────────────────────────────────────────────────────────────────
 -->
