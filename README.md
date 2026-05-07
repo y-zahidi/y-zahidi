@@ -3,10 +3,10 @@
 </p>
 
 <p align="center">
-  <a href="https://y-zahidi.github.io"><img src="https://img.shields.io/badge/Portfolio-y--zahidi.github.io-5cf2c1?style=for-the-badge&logo=githubpages&logoColor=0a0e14"></a>
-  <a href="https://www.linkedin.com/in/yassir-zahidi/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"></a>
-  <a href="mailto:yassirzahidi8@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white"></a>
-  <img src="https://komarev.com/ghpvc/?username=y-zahidi&style=for-the-badge&color=5cf2c1&label=PROFILE+VIEWS" alt="Profile views">
+  <a href="https://y-zahidi.github.io"><img src="https://img.shields.io/badge/Portfolio-y--zahidi.github.io-5cf2c1?style=for-the-badge&logo=githubpages&logoColor=0a0e14&labelColor=0a0e14" alt="Portfolio"></a>
+  <a href="https://www.linkedin.com/in/yassir-zahidi/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0a0e14" alt="LinkedIn"></a>
+  <a href="mailto:yassirzahidi8@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0a0e14" alt="Email"></a>
+  <img src="https://komarev.com/ghpvc/?username=y-zahidi&style=for-the-badge&color=5cf2c1&label=PROFILE+VIEWS&labelColor=0a0e14" alt="Profile views">
 </p>
 
 <p align="center">
@@ -114,15 +114,17 @@ N1/N2 support for **70+ Windows / VPN users**, **99% IT service uptime**. Resolv
 
 ---
 
-### GitHub stats
+### GitHub at a glance
 
 <p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=y-zahidi&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true&rank_icon=github">
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=y-zahidi&layout=compact&theme=tokyonight&hide_border=true&langs_count=8">
+  <img src="https://img.shields.io/github/followers/y-zahidi?style=for-the-badge&logo=github&logoColor=white&color=5cf2c1&labelColor=0a0e14&label=followers" alt="followers">
+  <img src="https://img.shields.io/github/stars/y-zahidi?affiliations=OWNER&style=for-the-badge&logo=github&logoColor=white&color=5cf2c1&labelColor=0a0e14&label=stars" alt="stars">
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fy-zahidi&query=%24.public_repos&style=for-the-badge&logo=github&logoColor=white&color=5cf2c1&labelColor=0a0e14&label=public+repos" alt="public repos">
+  <img src="https://img.shields.io/badge/PFE_2026-open-5cf2c1?style=for-the-badge&logoColor=white&labelColor=0a0e14&label=cybersec/SOC" alt="status">
 </p>
 
 <p align="center">
-  <img height="170" src="https://streak-stats.demolab.com?user=y-zahidi&theme=tokyonight&hide_border=true">
+  <img src="https://streak-stats.demolab.com?user=y-zahidi&theme=tokyonight&hide_border=true&background=0a0e1400&ring=5cf2c1&fire=5cf2c1&currStreakNum=ffffff&currStreakLabel=5cf2c1&sideNums=ffffff&sideLabels=ffffff&dates=cccccc" alt="GitHub streak">
 </p>
 
 <p align="center">
@@ -130,8 +132,27 @@ N1/N2 support for **70+ Windows / VPN users**, **99% IT service uptime**. Resolv
 </p>
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=y-zahidi&theme=tokyo-night&hide_border=true&area=true" alt="activity graph">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=y-zahidi&theme=tokyo-night&hide_border=true&area=true&bg_color=0a0e14&color=5cf2c1&line=5cf2c1&point=ffffff" alt="activity graph">
 </p>
+
+<details>
+<summary><b>In-depth metrics & contribution snake</b> &nbsp;<sub>(auto-refreshed daily by GitHub Actions — see <code>.github/workflows/metrics.yml</code>)</sub></summary>
+
+<br>
+
+<p align="center">
+  <img src="./metrics.svg" alt="GitHub metrics — overview">
+</p>
+
+<p align="center">
+  <img src="./metrics.plugins.svg" alt="Top languages, isocalendar & achievements">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/y-zahidi/y-zahidi/output/github-snake-dark.svg" alt="Contribution snake">
+</p>
+
+</details>
 
 ---
 
@@ -145,4 +166,4 @@ Hiring for **cybersecurity / SOC / DevSecOps / IT infrastructure** internships �
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:5cf2c1,100:0a0e14&height=80&section=footer" alt="footer" />
-</p>       
+</p>           
