@@ -44,6 +44,26 @@ This page is a living operator console. Every section below is something I'd act
 
 ---
 
+### `play /soc/killchain.mov`
+
+A 30-second loop. An adversary walks every stage of the kill-chain — recon, phish, foothold, priv-esc, lateral, exfil — and every stage gets caught: red glow when the technique is observed, blue glow when the matching detection rule fires. The terminal at the bottom is the real `tail -f /var/log/wazuh/alerts.json | jq -r .rule.description` shape, scrolling matched alerts in real time with the same `[t+NN.Ns]` timestamps the production pipeline emits.
+
+<img src="assets/killchain.svg" alt="Animated kill-chain detection movie — 6 stages × adversary techniques × matching SIGMA rules · 30s loop" />
+
+> Hand-coded SVG. SMIL animations, no external libs, no JS. Same MITRE technique IDs the home-lab-siem actually fires on (T1595, T1566.001, T1059.001, T1548.002, T1003.001, T1048.003). MTTD median ≤ 1.7 s in this run · MTTR median ≤ 0.6 s · 6/6 stages contained.
+
+---
+
+### `cat /detection/calendar`
+
+What detection engineering actually looks like across a year — rules shipped, atomic-red-team tests run, red→blue closures documented. Each cell is a day; darker cells are higher-volume weeks. The blue cursor sweeps left-to-right on a 20-second loop because the backlog never sleeps.
+
+<img src="assets/heatmap.svg" alt="Detection-engineering activity calendar — 52 weeks × 7 days · 687 contributions · 28 in best week" />
+
+> Same vocabulary as the [portfolio heatmap](https://y-zahidi.github.io/#heatmap) — different surface. Numbers come from a deterministic seed so the page stays stable across refreshes; the *shape* (winter peak, weekend dip, ship-streak in the back half) reflects how the lab actually runs.
+
+---
+
 ### `cat /now`
 
 ```yaml
