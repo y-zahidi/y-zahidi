@@ -1,0 +1,36 @@
+name: Generate contribution snake
+
+# Renders the snake-eating-contributions animation into output/ and pushes it
+# to a dedicated `output` branch. The README references those files directly
+# via the raw GitHub URL, so the animation always loads even if the action
+# happens to be running.
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/snake.yml"]
+  schedule:
+    - cron: "30 6 * * *"   # 30 min after the metrics cron
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  snake:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: y-zahidi
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+            dist/ocean.gif?color_snake=orange&color_dots=#bfd7ff,#6ab4ff,#0084ff,#003c87,#001b3d
+
+      - uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
