@@ -1,48 +1,72 @@
-<h1 align="center">Hi, I'm Yassir Zahidi 👋</h1>
-<h3 align="center">Computer Engineering Student · Cybersecurity & IT Infrastructure</h3>
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0a0e14,100:5cf2c1&height=170&section=header&text=Yassir%20Zahidi&fontColor=ffffff&fontSize=46&fontAlign=50&fontAlignY=38&desc=Cybersecurity%20%C2%B7%20Computer%20Engineering%20%C2%B7%20Rabat%2C%20Morocco&descAlign=50&descAlignY=62&descSize=14" alt="banner" />
+</p>
 
 <p align="center">
+  <a href="https://y-zahidi.github.io"><img src="https://img.shields.io/badge/Portfolio-y--zahidi.github.io-5cf2c1?style=for-the-badge&logo=githubpages&logoColor=0a0e14"></a>
   <a href="https://www.linkedin.com/in/yassir-zahidi/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"></a>
   <a href="mailto:yassirzahidi8@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white"></a>
-  <img src="https://komarev.com/ghpvc/?username=y-zahidi&style=for-the-badge&color=blue" alt="Profile views">
+  <img src="https://komarev.com/ghpvc/?username=y-zahidi&style=for-the-badge&color=5cf2c1&label=PROFILE+VIEWS" alt="Profile views">
+</p>
+
+<p align="center">
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=3500&pause=900&color=5CF2C1&center=true&vCenter=true&width=620&lines=Cybersecurity+%2F+SOC+%2F+Infrastructure+intern+%E2%80%93+2026;Wazuh+%C2%B7+Suricata+%C2%B7+Sysmon+%C2%B7+MISP+%C2%B7+FortiGate+%C2%B7+Nessus;I+ship+real+labs.+Code+is+open.+READMEs+are+written." alt="role typing">
+  </a>
 </p>
 
 ---
 
-### 🎯 About me
+### About
 
-I'm a Computer Engineering student, with a 2-year background as a **Specialized Technician in Digital Infrastructure & Cybersecurity** . I work at the intersection of **secure systems and clean software** — from deploying SIEM stacks in production to shipping full-stack apps and BI data warehouses.
+Computer Engineering student in Rabat, with a 2-year diploma as **Specialized Technician in Digital Infrastructure & Cybersecurity** already done. Most of what I know about security I learned by deploying it — not by reading about it.
 
-- 🛡️ Hands-on with **Wazuh, Suricata, Sysmon, MISP, FortiGate, Nessus, Cisco** networks
-- 💻 I also build software end-to-end: **C++ / Delphi**, **PHP / JS / MySQL**, **WordPress**, **Data Warehouses (MySQL + QlikView)**
-- 🎓 Certified **Cisco CCNA 1-3**, **Fortinet NSE 1-3**, **EC-Council (DFE / EHE / NDE)**, **Orange Cybersec**, **ICSI CNSS**
-- 💼 Open to **PFE / internships / first job 2026** in Cybersecurity, DevSecOps, IT Infrastructure, or Data Engineering — Morocco / EU / Remote
+- Hands-on with **Wazuh · Suricata · Sysmon · MISP · FortiGate · Nessus · Cisco**
+- Also build software end-to-end: **C++ / Delphi · PHP / JS / MySQL · WordPress · Data Warehouses (MySQL + QlikView)**
+- 13 certifications · **Cisco CCNA 1-3** · **Fortinet NSE 1-3** · **EC-Council (DFE · EHE · NDE)** · **Orange Cybersec** · **ICSI CNSS** · **DELF B2**
+- Open to **PFE / internships 2026** in Cybersecurity, SOC, DevSecOps, or IT Infrastructure — Morocco / EU / Remote
 
----
-
-### 🛡️ Cybersecurity Experience (Production)
-
-**Préfecture de Tétouan — SSIC** · *Cybersecurity Intern · May 2024*
-Designed and deployed a multi-layer SIEM architecture: **Wazuh + Suricata + Sysmon + MISP + VirusTotal**, integrated with a **FortiGate** firewall. Ran **Nessus** vulnerability scans and initial penetration tests, and improved the SOC's detection & response capabilities.
-
-**ALTEN Maroc — Tétouan Shore** · *IT Support Technician (N1/N2) · Mar 2025 – Sep 2025*
-N1/N2 support for **70+ Windows / VPN users** with **99% IT service uptime**. Resolved 50+ incidents, hardened workstations, and contributed to IT infrastructure security.
+> Live site → **<https://y-zahidi.github.io>**
 
 ---
 
-### 🚀 Featured Projects
+### Currently
 
-| Project | Stack | Description |
+```yaml
+location:    Rabat, Morocco
+working_on:  home-lab-siem · pentest-cheatsheet · ctf-writeups
+learning:    OSCP path · Active Directory · DFIR
+available:   from May 2026 (cybersec / SOC / infra internship)
+contact:     yassirzahidi8@gmail.com
+```
+
+---
+
+### Production experience
+
+**Préfecture de Tétouan — Ministère de l'Intérieur** · *Cybersecurity Intern · 02 May → 31 May 2024*
+Designed and deployed a multi-layer SIEM: **Wazuh + Suricata + Sysmon + MISP + VirusTotal**, integrated with a **FortiGate** firewall. Ran **Nessus** vulnerability scans and initial penetration tests, improving the SOC's detection & response posture. Lab version of the stack lives at [home-lab-siem](https://github.com/y-zahidi/home-lab-siem).
+
+**ALTEN Maroc — Tétouan Shore** · *IT Support Technician (N1/N2) · Mar 2025 → Sep 2025*
+N1/N2 support for **70+ Windows / VPN users**, **99% IT service uptime**. Resolved 50+ incidents, hardened workstations, contributed to IT infrastructure security.
+
+---
+
+### Featured projects
+
+| Project | Stack | What it is |
 |---------|-------|-------------|
-| 🛡️ **[home-lab-siem](https://github.com/y-zahidi/home-lab-siem)** | Wazuh · Suricata · Sysmon · Docker | Multi-layer SIEM lab with detection rules and dashboards |
-| 💻 **[HTMLCamp](https://github.com/y-zahidi/HTMLCamp)** | PHP · JS · MySQL · Monaco · CodeLlama | E-learning platform with AI assistant — [live demo](https://htmlcamp.free.nf/) |
-| 🧾 **[FacturationPro Enterprise](https://github.com/y-zahidi/FacturationPro-Enterprise)** | C++ · Delphi VCL · SQLite · FireDAC | Desktop billing system, 8 modules, PDF export |
-| 💧 **[Water Stress Morocco](https://github.com/y-zahidi/water-stress-morocco-analytics)** | MySQL · QlikView · Star Schema · Python | Data warehouse — 68K+ records across 12 regions |
-| 🏛️ **[Rabat Cultural](https://github.com/y-zahidi/Rabat-Cultural-Website)** | WordPress · PHP · CSS3 | WCAG 2.1 AA, 92+ Mobile PageSpeed — [live](https://rabatculture.lovestoblog.com) |
+| **[home-lab-siem](https://github.com/y-zahidi/home-lab-siem)** | Wazuh · Suricata · Sysmon · Docker | Reproducible multi-layer SIEM lab — `docker compose up` and you have Wazuh + Suricata + dashboards in 3 min |
+| **[pentest-cheatsheet](https://github.com/y-zahidi/pentest-cheatsheet)** | Markdown | My working notes — recon → enum → AD → web → post-exploitation |
+| **[ctf-writeups](https://github.com/y-zahidi/ctf-writeups)** | Markdown | TryHackMe / HackTheBox walkthroughs — methodology over flags |
+| **[HTMLCamp](https://github.com/y-zahidi/HTMLCamp)** | PHP · JS · MySQL · Monaco · CodeLlama | E-learning platform with AI assistant — [live demo](https://htmlcamp.free.nf/) |
+| **[FacturationPro Enterprise](https://github.com/y-zahidi/FacturationPro-Enterprise)** | C++ · Delphi VCL · SQLite · FireDAC | Desktop billing system — 8 modules, PDF export, multi-user |
+| **[Water Stress Morocco](https://github.com/y-zahidi/water-stress-morocco-analytics)** | MySQL · QlikView · Star Schema · Python | Data warehouse — 68K+ records across 12 regions, 2015–2025 |
+| **[Rabat Cultural](https://github.com/y-zahidi/Rabat-Cultural-Website)** | WordPress · PHP · CSS3 | WCAG 2.1 AA, 92+ Mobile PageSpeed — [live](https://rabatculture.lovestoblog.com) |
 
 ---
 
-### 🛠️ Tech Stack
+### Tech stack
 
 **Cybersecurity**
 ![Wazuh](https://img.shields.io/badge/Wazuh-005571?style=flat-square&logo=wazuh&logoColor=white)
@@ -79,28 +103,46 @@ N1/N2 support for **70+ Windows / VPN users** with **99% IT service uptime**. Re
 
 ---
 
-### 🎓 Certifications
+### Certifications
 
-- 🏛️ **Cisco** — CCNA 1, 2 & 3 (Networks · Switching/Routing · Security & Automation)
-- 🛡️ **Fortinet** — Certified Fundamentals in Cybersecurity, NSE 1, 2 & 3
-- 🔍 **EC-Council** — Digital Forensics Essentials (DFE), Ethical Hacking Essentials (EHE), Network Defense Essentials (NDE)
-- 🏢 **Orange Digital Center** — Cybersecurity Certificate (Rabat)
-- 🏅 **ICSI** — Certified Network Security Specialist (CNSS)
-- 🇫🇷 **DELF B2** — Diplôme d'Études en Langue Française (2025)
+- **Cisco** — CCNA 1, 2 & 3 (Networks · Switching/Routing · Security & Automation)
+- **Fortinet** — Certified Fundamentals in Cybersecurity, NSE 1, 2 & 3
+- **EC-Council** — Digital Forensics Essentials (DFE), Ethical Hacking Essentials (EHE), Network Defense Essentials (NDE)
+- **Orange Digital Center** — Cybersecurity Certificate (Rabat)
+- **ICSI** — Certified Network Security Specialist (CNSS)
+- **DELF B2** — Diplôme d'Études en Langue Française (2025)
 
 ---
 
-### 📊 GitHub Stats
+### GitHub stats
 
 <p align="center">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=y-zahidi&show_icons=true&theme=tokyonight&hide_border=true&count_private=true">
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=y-zahidi&layout=compact&theme=tokyonight&hide_border=true">
+  <img height="170" src="https://github-readme-stats.vercel.app/api?username=y-zahidi&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true&rank_icon=github">
+  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=y-zahidi&layout=compact&theme=tokyonight&hide_border=true&langs_count=8">
+</p>
+
+<p align="center">
+  <img height="170" src="https://streak-stats.demolab.com?user=y-zahidi&theme=tokyonight&hide_border=true">
+</p>
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=y-zahidi&theme=tokyonight&no-frame=true&row=1&column=7&margin-w=10&margin-h=10" alt="trophies">
+</p>
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=y-zahidi&theme=tokyo-night&hide_border=true&area=true" alt="activity graph">
 </p>
 
 ---
 
-### 📫 Let's connect
+### Let's connect
 
-If you're hiring for **cybersecurity, DevSecOps, IT infrastructure, or data engineering** internships — or just want to talk about SIEMs, FortiGate, or building things from scratch — say hi.
+Hiring for **cybersecurity / SOC / DevSecOps / IT infrastructure** internships — or want a second pair of eyes on a Wazuh rule, a FortiGate config, or a SIEM architecture? Drop a line.
 
-🌐 [LinkedIn](https://www.linkedin.com/in/yassir-zahidi/) 
+- Portfolio → **<https://y-zahidi.github.io>**
+- LinkedIn → **<https://www.linkedin.com/in/yassir-zahidi/>**
+- Email → **yassirzahidi8@gmail.com**
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:5cf2c1,100:0a0e14&height=80&section=footer" alt="footer" />
+</p>       
