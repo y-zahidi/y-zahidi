@@ -7,7 +7,7 @@
 -->
 
 <a href="https://y-zahidi.github.io">
-  <img src="banner.svg" alt="Yassir Zahidi — Cybersecurity engineer-in-training · SOC / blue team / detection engineering" />
+  <img src="banner.svg" alt="Yassir Zahidi — Cybersecurity engineer-in-training · blue + red + purple — SOC, detection engineering, pentest" />
 </a>
 
 <p align="center">
@@ -18,16 +18,19 @@
   <img alt="status" src="https://img.shields.io/badge/status-shipping-5cf2c1?style=flat-square&labelColor=04070d"/>
   <img alt="available" src="https://img.shields.io/badge/available-now-5cf2c1?style=flat-square&labelColor=04070d"/>
   <img alt="location" src="https://img.shields.io/badge/location-Morocco-79e2ff?style=flat-square&labelColor=04070d"/>
+  <img alt="colors" src="https://img.shields.io/badge/colors-blue%20%2B%20red%20%2B%20purple-a78bfa?style=flat-square&labelColor=04070d"/>
 </p>
 
 ```text
 $ whoami && cat /etc/role && cat /etc/looking-for
 yassir.zahidi
 specialized-technician-cybersecurity → computer-engineering-student
-SOC / blue-team / DevSecOps internship — open · Morocco · EU · remote
+SOC · detection-engineering · pentest · purple-team — open · Morocco · EU · remote
 ```
 
-I deploy and run the kind of stack a small SOC actually uses: **Wazuh + Suricata + Sysmon + MISP + VirusTotal**, fronted by a **FortiGate** firewall and validated weekly with **Nessus**. I built that for real in May 2024 at the **Préfecture de Tétouan (SSIC, Ministère de l'Intérieur)**. The reproducible lab version lives on this profile — `docker compose up` and the SOC is online.
+I deploy and run the kind of stack a small SOC actually uses — **Wazuh + Suricata + Sysmon + MISP + VirusTotal**, fronted by a **FortiGate** firewall and validated weekly with **Nessus** — then I attack it on purpose to see what it misses. The defensive side I built for real in May 2024 at the **Préfecture de Tétouan (SSIC, Ministère de l'Intérieur)**; the offensive muscle I sharpen on TryHackMe / HackTheBox / CTFs and inside my own lab segment. Reproducible version lives on this profile — `docker compose up` and the SOC is online.
+
+I like working at the seam: writing the rule, then writing the payload that beats the rule, then writing the better rule. **Blue** is the day job. **Red** is the gym. **Purple** is the loop.
 
 This page is a living operator console. Every section below is something I'd actually have open on a screen during a shift.
 
@@ -46,10 +49,11 @@ This page is a living operator console. Every section below is something I'd act
 ```yaml
 location:    Morocco
 timezone:    Africa/Casablanca · GMT+1
-working_on:  home-lab-siem (atomic-red-team validation · MISP correlation)
+blue:        home-lab-siem (atomic-red-team validation · MISP correlation · sigma pipeline)
+red:         OSCP path · Active Directory pivoting · web/AD machines on HTB + THM weekly
+purple:      every red find is a new wazuh rule the next day — documented in ctf-writeups
 shipping:    custom Wazuh decoders for FortiGate + Sysmon channel
-learning:    OSCP path · Active Directory pivoting · DFIR (Velociraptor)
-reading:     "The Practice of Network Security Monitoring" — Bejtlich
+reading:     "The Practice of Network Security Monitoring" — Bejtlich · "The Hacker Playbook 3"
 listening:   ColorADD · Maâlem Hamid el Kasri · Caravan Palace
 available:   open — remote / EU / Morocco · respond < 24h
 contact:     yassirzahidi8@gmail.com
@@ -255,11 +259,12 @@ Also: [HTMLCamp](https://github.com/y-zahidi/HTMLCamp) · [Rabat-Cultural-Websit
 
 ```text
 1. detection without telemetry is theater
-2. write the runbook before you need it
-3. every alert ships with its own triage steps and mitre id
-4. an alert nobody reads is worse than no alert
-5. document the falsepositive that almost fooled you, by name
-6. blue team wins on boring tuesdays — not in incident war rooms
+2. the best detection is a friendly red team — attack your own rules first
+3. every alert ships with triage steps, a mitre id, and the payload that proves it fires
+4. write the runbook before you need it; rehearse it with atomic-red-team
+5. an alert nobody reads is worse than no alert
+6. document the falsepositive that almost fooled you, by name
+7. blue is the day job, red is the gym, purple is the loop — you don't get to skip leg day
 ```
 
 ---

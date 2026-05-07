@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-label="Yassir Zahidi — cybersecurity engineer-in-training · SOC, blue team, detection engineering">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-label="Yassir Zahidi — cybersecurity engineer-in-training · blue + red + purple — SOC, detection engineering, pentest">
   <title>Yassir Zahidi — operator console</title>
   <desc>Terminal-style banner. A SOC analyst's pinned console: live commands, blinking cursor, brand mark.</desc>
   <defs>
@@ -76,7 +76,7 @@
       <text x="14" fill="#f1f5fb">grep -i looking-for ./status.yml</text>
     </g>
     <g transform="translate(0 72)" clip-path="url(#clipL4)">
-      <text fill="#cfd6e4">SOC / blue-team / DevSecOps internship — open · Morocco · EU · remote</text>
+      <text fill="#cfd6e4">SOC · detection · pentest · purple-team — open · Morocco · EU · remote</text>
     </g>
   </g>
 
@@ -86,7 +86,7 @@
       <text font-size="62" font-weight="700" fill="#e2e9f6" letter-spacing="-1.5">Yassir Zahidi</text>
     </g>
     <g clip-path="url(#clipSub)">
-      <text y="34" font-size="20" fill="#8ea0bd" font-weight="400">Cybersecurity engineer-in-training · SOC / blue team / detection engineering</text>
+      <text y="34" font-size="20" fill="#8ea0bd" font-weight="400">Cybersecurity engineer-in-training · blue + red + purple — SOC · detection · pentest</text>
     </g>
   </g>
 
