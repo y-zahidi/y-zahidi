@@ -76,7 +76,7 @@
       <text x="14" fill="#f1f5fb">grep -i looking-for ./status.yml</text>
     </g>
     <g transform="translate(0 72)" clip-path="url(#clipL4)">
-      <text fill="#cfd6e4">SOC / blue-team / DevSecOps internship — 2026 — Morocco · EU · remote</text>
+      <text fill="#cfd6e4">SOC / blue-team / DevSecOps internship — open · Morocco · EU · remote</text>
     </g>
   </g>
 
@@ -119,9 +119,9 @@
   </g>
 
   <!-- bottom bar -->
-  <text x="60" y="345" font-family="ui-monospace, monospace" font-size="12" fill="#54688a" letter-spacing="2">y-zahidi.github.io  ·  yassirzahidi8@gmail.com  ·  Rabat, MA  ·  available May 2026</text>
-  <g transform="translate(1090 340)" font-family="ui-monospace, monospace" font-size="11" fill="#5cf2c1">
+  <text x="60" y="345" font-family="ui-monospace, monospace" font-size="12" fill="#54688a" letter-spacing="2">y-zahidi.github.io  ·  yassirzahidi8@gmail.com  ·  Morocco  ·  available now · open</text>
+  <g transform="translate(1078 340)" font-family="ui-monospace, monospace" font-size="11" fill="#5cf2c1">
     <circle r="4" fill="#5cf2c1"><animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
-    <text x="10" y="4">live</text>
+    <text x="10" y="4">on shift</text>
   </g>
 </svg>
