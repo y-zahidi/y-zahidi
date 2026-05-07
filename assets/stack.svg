@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-label="Skill stack heatmap — fluency by domain">
+  <title>Stack heatmap — fluency by domain</title>
+  <desc>Hand-coded heatmap of tools and languages, grouped by domain, shaded by current fluency.</desc>
+  <defs>
+    <linearGradient id="st-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#04070d"/>
+      <stop offset="1" stop-color="#0a1424"/>
+    </linearGradient>
+    <pattern id="st-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#0f1a2c" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="360" fill="url(#st-bg)"/>
+  <rect width="1200" height="360" fill="url(#st-grid)" opacity=".45"/>
+
+  <g font-family="ui-monospace, 'JetBrains Mono', monospace">
+    <text x="32" y="34" font-size="13" fill="#54688a" letter-spacing="3">~ /etc/stack</text>
+    <text x="32" y="60" font-size="20" fill="#e2e9f6">fluency by domain</text>
+    <text x="32" y="80" font-size="11" fill="#8ea0bd">honest self-assessment · ranged &lt;1, 2, 3, 4&gt; on a 4-tier scale</text>
+
+    <g transform="translate(820 56)" font-size="11" fill="#8ea0bd">
+      <text>tier 1</text>
+      <rect x="48"  y="-10" width="22" height="14" rx="2" fill="#163d3a" stroke="#1f2f4a"/>
+      <rect x="74"  y="-10" width="22" height="14" rx="2" fill="#1f6f63" stroke="#1f2f4a"/>
+      <rect x="100" y="-10" width="22" height="14" rx="2" fill="#3eb39a" stroke="#1f2f4a"/>
+      <rect x="126" y="-10" width="22" height="14" rx="2" fill="#5cf2c1" stroke="#1f2f4a"/>
+      <text x="156">tier 4</text>
+    </g>
+
+    <!-- Detection -->
+    <g transform="translate(0 110)">
+      <text x="32" y="14" fill="#79e2ff">detection</text>
+      <g transform="translate(180 0)">
+        <g><rect width="100" height="22" rx="3" fill="#5cf2c1"/><text x="6" y="15" fill="#04070d">wazuh</text></g>
+        <g transform="translate(106 0)"><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">sigma</text></g>
+        <g transform="translate(212 0)"><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">suricata</text></g>
+        <g transform="translate(318 0)"><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">sysmon</text></g>
+        <g transform="translate(424 0)"><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">mitre att&amp;ck</text></g>
+        <g transform="translate(530 0)"><rect width="100" height="22" rx="3" fill="#1f6f63"/><text x="6" y="15" fill="#cfd6e4">atomic-red-team</text></g>
+        <g transform="translate(636 0)"><rect width="100" height="22" rx="3" fill="#1f6f63"/><text x="6" y="15" fill="#cfd6e4">elastic / kibana</text></g>
+        <g transform="translate(742 0)"><rect width="100" height="22" rx="3" fill="#163d3a"/><text x="6" y="15" fill="#cfd6e4">velociraptor</text></g>
+      </g>
+    </g>
+
+    <!-- Threat intel -->
+    <g transform="translate(0 142)">
+      <text x="32" y="14" fill="#79e2ff">threat-intel</text>
+      <g transform="translate(180 0)">
+        <g><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">misp</text></g>
+        <g transform="translate(106 0)"><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">virustotal</text></g>
+        <g transform="translate(212 0)"><rect width="100" height="22" rx="3" fill="#1f6f63"/><text x="6" y="15" fill="#cfd6e4">opencti</text></g>
+        <g transform="translate(318 0)"><rect width="100" height="22" rx="3" fill="#1f6f63"/><text x="6" y="15" fill="#cfd6e4">abuse.ch</text></g>
+        <g transform="translate(424 0)"><rect width="100" height="22" rx="3" fill="#1f6f63"/><text x="6" y="15" fill="#cfd6e4">circl</text></g>
+        <g transform="translate(530 0)"><rect width="100" height="22" rx="3" fill="#163d3a"/><text x="6" y="15" fill="#cfd6e4">stix / taxii</text></g>
+      </g>
+    </g>
+
+    <!-- Perimeter / network -->
+    <g transform="translate(0 174)">
+      <text x="32" y="14" fill="#79e2ff">perimeter</text>
+      <g transform="translate(180 0)">
+        <g><rect width="100" height="22" rx="3" fill="#5cf2c1"/><text x="6" y="15" fill="#04070d">fortigate</text></g>
+        <g transform="translate(106 0)"><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">nessus</text></g>
+        <g transform="translate(212 0)"><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">wireshark</text></g>
+        <g transform="translate(318 0)"><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">openvpn</text></g>
+        <g transform="translate(424 0)"><rect width="100" height="22" rx="3" fill="#1f6f63"/><text x="6" y="15" fill="#cfd6e4">ipsec</text></g>
+        <g transform="translate(530 0)"><rect width="100" height="22" rx="3" fill="#1f6f63"/><text x="6" y="15" fill="#cfd6e4">cisco ios</text></g>
+        <g transform="translate(636 0)"><rect width="100" height="22" rx="3" fill="#1f6f63"/><text x="6" y="15" fill="#cfd6e4">pfsense</text></g>
+      </g>
+    </g>
+
+    <!-- Offensive -->
+    <g transform="translate(0 206)">
+      <text x="32" y="14" fill="#79e2ff">offensive</text>
+      <g transform="translate(180 0)">
+        <g><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">nmap</text></g>
+        <g transform="translate(106 0)"><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">burp suite</text></g>
+        <g transform="translate(212 0)"><rect width="100" height="22" rx="3" fill="#1f6f63"/><text x="6" y="15" fill="#cfd6e4">metasploit</text></g>
+        <g transform="translate(318 0)"><rect width="100" height="22" rx="3" fill="#1f6f63"/><text x="6" y="15" fill="#cfd6e4">bloodhound</text></g>
+        <g transform="translate(424 0)"><rect width="100" height="22" rx="3" fill="#1f6f63"/><text x="6" y="15" fill="#cfd6e4">linpeas</text></g>
+        <g transform="translate(530 0)"><rect width="100" height="22" rx="3" fill="#1f6f63"/><text x="6" y="15" fill="#cfd6e4">mimikatz</text></g>
+        <g transform="translate(636 0)"><rect width="100" height="22" rx="3" fill="#163d3a"/><text x="6" y="15" fill="#cfd6e4">empire</text></g>
+      </g>
+    </g>
+
+    <!-- OS / Identity -->
+    <g transform="translate(0 238)">
+      <text x="32" y="14" fill="#79e2ff">os · identity</text>
+      <g transform="translate(180 0)">
+        <g><rect width="100" height="22" rx="3" fill="#5cf2c1"/><text x="6" y="15" fill="#04070d">linux</text></g>
+        <g transform="translate(106 0)"><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">windows srv.</text></g>
+        <g transform="translate(212 0)"><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">active dir.</text></g>
+        <g transform="translate(318 0)"><rect width="100" height="22" rx="3" fill="#1f6f63"/><text x="6" y="15" fill="#cfd6e4">kerberos</text></g>
+        <g transform="translate(424 0)"><rect width="100" height="22" rx="3" fill="#1f6f63"/><text x="6" y="15" fill="#cfd6e4">ldap</text></g>
+        <g transform="translate(530 0)"><rect width="100" height="22" rx="3" fill="#1f6f63"/><text x="6" y="15" fill="#cfd6e4">gpo</text></g>
+      </g>
+    </g>
+
+    <!-- Languages -->
+    <g transform="translate(0 270)">
+      <text x="32" y="14" fill="#79e2ff">languages</text>
+      <g transform="translate(180 0)">
+        <g><rect width="100" height="22" rx="3" fill="#5cf2c1"/><text x="6" y="15" fill="#04070d">c++</text></g>
+        <g transform="translate(106 0)"><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">python</text></g>
+        <g transform="translate(212 0)"><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">php</text></g>
+        <g transform="translate(318 0)"><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">javascript</text></g>
+        <g transform="translate(424 0)"><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">sql</text></g>
+        <g transform="translate(530 0)"><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">bash</text></g>
+        <g transform="translate(636 0)"><rect width="100" height="22" rx="3" fill="#1f6f63"/><text x="6" y="15" fill="#cfd6e4">powershell</text></g>
+        <g transform="translate(742 0)"><rect width="100" height="22" rx="3" fill="#163d3a"/><text x="6" y="15" fill="#cfd6e4">go</text></g>
+      </g>
+    </g>
+
+    <!-- Infra -->
+    <g transform="translate(0 302)">
+      <text x="32" y="14" fill="#79e2ff">infra</text>
+      <g transform="translate(180 0)">
+        <g><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">docker</text></g>
+        <g transform="translate(106 0)"><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">vmware</text></g>
+        <g transform="translate(212 0)"><rect width="100" height="22" rx="3" fill="#3eb39a"/><text x="6" y="15" fill="#04070d">git · gh actions</text></g>
+        <g transform="translate(318 0)"><rect width="100" height="22" rx="3" fill="#1f6f63"/><text x="6" y="15" fill="#cfd6e4">ansible</text></g>
+        <g transform="translate(424 0)"><rect width="100" height="22" rx="3" fill="#1f6f63"/><text x="6" y="15" fill="#cfd6e4">nginx</text></g>
+        <g transform="translate(530 0)"><rect width="100" height="22" rx="3" fill="#163d3a"/><text x="6" y="15" fill="#cfd6e4">terraform</text></g>
+        <g transform="translate(636 0)"><rect width="100" height="22" rx="3" fill="#163d3a"/><text x="6" y="15" fill="#cfd6e4">k8s</text></g>
+      </g>
+    </g>
+
+    <text x="32" y="350" font-size="11" fill="#54688a" letter-spacing="2">last updated · daily · cells move when tier-up evidence (project shipped, exam passed) lands</text>
+  </g>
+</svg>

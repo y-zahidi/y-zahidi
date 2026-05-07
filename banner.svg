@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Yassir Zahidi — cybersecurity engineer-in-training">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-label="Yassir Zahidi — cybersecurity engineer-in-training · SOC, blue team, detection engineering">
+  <title>Yassir Zahidi — operator console</title>
+  <desc>Terminal-style banner. A SOC analyst's pinned console: live commands, blinking cursor, brand mark.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0"   stop-color="#050810"/>
+      <stop offset="0"   stop-color="#04070d"/>
       <stop offset=".55" stop-color="#08111d"/>
       <stop offset="1"   stop-color="#0a1424"/>
     </linearGradient>
@@ -15,41 +17,82 @@
       <stop offset="0" stop-color="#5cf2c1"/>
       <stop offset="1" stop-color="#79e2ff"/>
     </linearGradient>
+    <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"  stop-color="#5cf2c1" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#5cf2c1" stop-opacity=".06"/>
+      <stop offset="1"  stop-color="#5cf2c1" stop-opacity="0"/>
+    </linearGradient>
     <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
       <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#142036" stroke-width="1"/>
     </pattern>
     <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="10"/>
     </filter>
+    <clipPath id="clipL1"><rect x="-4" y="-16" width="0" height="24"><animate attributeName="width" values="0;320" dur="1.2s" begin="0s" fill="freeze"/></rect></clipPath>
+    <clipPath id="clipL2"><rect x="-4" y="-16" width="0" height="24"><animate attributeName="width" values="0;640" dur="1.2s" begin="1.4s" fill="freeze"/></rect></clipPath>
+    <clipPath id="clipL3"><rect x="-4" y="-16" width="0" height="24"><animate attributeName="width" values="0;420" dur="1.4s" begin="2.8s" fill="freeze"/></rect></clipPath>
+    <clipPath id="clipL4"><rect x="-4" y="-16" width="0" height="24"><animate attributeName="width" values="0;760" dur="1.4s" begin="4.4s" fill="freeze"/></rect></clipPath>
+    <clipPath id="clipName"><rect x="0" y="0" width="0" height="80"><animate attributeName="width" values="0;460" dur="1.4s" begin="6.0s" fill="freeze"/></rect></clipPath>
+    <clipPath id="clipSub"><rect x="0" y="0" width="0" height="36"><animate attributeName="width" values="0;640" dur="1.6s" begin="7.5s" fill="freeze"/></rect></clipPath>
   </defs>
 
-  <rect width="1200" height="320" fill="url(#bg)"/>
-  <rect width="1200" height="320" fill="url(#grid)" opacity=".55"/>
-  <rect width="1200" height="320" fill="url(#glow)"/>
+  <rect width="1200" height="360" fill="url(#bg)"/>
+  <rect width="1200" height="360" fill="url(#grid)" opacity=".28"/>
+  <rect width="1200" height="360" fill="url(#glow)"/>
+  <rect x="40" y="82" width="840" height="108" rx="8" fill="#04070d" opacity=".55"/>
+  <rect width="1200" height="120" fill="url(#scan)">
+    <animate attributeName="y" values="-120;360" dur="6s" repeatCount="indefinite"/>
+  </rect>
 
   <!-- corner ticks -->
   <g stroke="#1f2f4a" stroke-width="1.5" fill="none">
     <path d="M22 22 L22 60 M22 22 L60 22"/>
     <path d="M1178 22 L1140 22 M1178 22 L1178 60"/>
-    <path d="M22 298 L22 260 M22 298 L60 298"/>
-    <path d="M1178 298 L1140 298 M1178 298 L1178 260"/>
+    <path d="M22 338 L22 300 M22 338 L60 338"/>
+    <path d="M1178 338 L1140 338 M1178 338 L1178 300"/>
   </g>
 
-  <!-- prompt header -->
-  <g transform="translate(60 70)" font-family="ui-monospace, 'JetBrains Mono', SFMono-Regular, Menlo, monospace">
-    <text font-size="14" fill="#54688a" letter-spacing="3">~ /yassir-zahidi</text>
-    <text y="22" font-size="18" fill="#5cf2c1">$</text>
-    <text x="22" y="22" font-size="18" fill="#e2e9f6">cat README.md</text>
+  <!-- traffic-light header -->
+  <g transform="translate(60 56)">
+    <circle r="6" fill="#ff5f57"/>
+    <circle cx="20" r="6" fill="#febc2e"/>
+    <circle cx="40" r="6" fill="#28c840"/>
+    <text x="60" y="5" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="12" fill="#54688a" letter-spacing="2">~/operator-console — zsh — 120×30</text>
+  </g>
+
+  <!-- typed prompt lines -->
+  <g transform="translate(60 104)" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Code', 'Fira Code', SFMono-Regular, Menlo, Consolas, monospace" font-size="15" font-weight="500">
+    <g clip-path="url(#clipL1)">
+      <text fill="#5cf2c1" font-weight="700">$</text>
+      <text x="14" fill="#f1f5fb">whoami &amp;&amp; cat /etc/role</text>
+    </g>
+    <g transform="translate(0 22)" clip-path="url(#clipL2)">
+      <text fill="#cfd6e4">yassir.zahidi</text>
+      <text x="112" fill="#54688a">·</text>
+      <text x="124" fill="#79e2ff">specialized-technician → computer-engineering-student</text>
+    </g>
+    <g transform="translate(0 50)" clip-path="url(#clipL3)">
+      <text fill="#5cf2c1" font-weight="700">$</text>
+      <text x="14" fill="#f1f5fb">grep -i looking-for ./status.yml</text>
+    </g>
+    <g transform="translate(0 72)" clip-path="url(#clipL4)">
+      <text fill="#cfd6e4">SOC / blue-team / DevSecOps internship — 2026 — Morocco · EU · remote</text>
+    </g>
   </g>
 
   <!-- name -->
-  <g transform="translate(60 165)" font-family="Inter, system-ui, sans-serif">
-    <text font-size="62" font-weight="700" fill="#e2e9f6" letter-spacing="-1.5">Yassir Zahidi</text>
-    <text y="34" font-size="20" fill="#8ea0bd" font-weight="400">Cybersecurity engineer-in-training · SOC / blue team / detection engineering</text>
+  <g transform="translate(60 215)" font-family="Inter, system-ui, sans-serif">
+    <g clip-path="url(#clipName)">
+      <text font-size="62" font-weight="700" fill="#e2e9f6" letter-spacing="-1.5">Yassir Zahidi</text>
+    </g>
+    <g clip-path="url(#clipSub)">
+      <text y="34" font-size="20" fill="#8ea0bd" font-weight="400">Cybersecurity engineer-in-training · SOC / blue team / detection engineering</text>
+    </g>
   </g>
 
-  <!-- chips -->
-  <g transform="translate(60 250)" font-family="ui-monospace, monospace" font-size="14">
+  <!-- stack chips -->
+  <g transform="translate(60 290)" font-family="ui-monospace, monospace" font-size="14" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur=".4s" begin="9.0s" fill="freeze"/>
     <g><rect width="92"  height="30" rx="6" fill="#0a1424" stroke="#1f2f4a"/><text x="14" y="20" fill="#79e2ff">wazuh</text></g>
     <g transform="translate(102 0)"><rect width="100" height="30" rx="6" fill="#0a1424" stroke="#1f2f4a"/><text x="14" y="20" fill="#79e2ff">suricata</text></g>
     <g transform="translate(212 0)"><rect width="92"  height="30" rx="6" fill="#0a1424" stroke="#1f2f4a"/><text x="14" y="20" fill="#79e2ff">sysmon</text></g>
@@ -60,9 +103,12 @@
   </g>
 
   <!-- right brand mark -->
-  <g transform="translate(1010 160)">
+  <g transform="translate(1010 180)">
     <circle r="92"  fill="url(#accent)" opacity=".18" filter="url(#soft)"/>
-    <circle r="86"  fill="none" stroke="url(#accent)" stroke-width="1.5" opacity=".7"/>
+    <circle r="86"  fill="none" stroke="url(#accent)" stroke-width="1.5" opacity=".7">
+      <animate attributeName="r" values="86;90;86" dur="3.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".7;.35;.7" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
     <rect x="-72" y="-72" width="144" height="144" rx="16" fill="#0a1424" stroke="#1f2f4a" stroke-width="1.5"/>
     <text x="0" y="14" text-anchor="middle"
           font-family="ui-monospace, 'JetBrains Mono', monospace"
@@ -72,6 +118,10 @@
     </rect>
   </g>
 
-  <!-- bottom URL -->
-  <text x="60" y="305" font-family="ui-monospace, monospace" font-size="13" fill="#54688a" letter-spacing="2">y-zahidi.github.io  ·  yassirzahidi8@gmail.com  ·  Rabat, MA</text>
+  <!-- bottom bar -->
+  <text x="60" y="345" font-family="ui-monospace, monospace" font-size="12" fill="#54688a" letter-spacing="2">y-zahidi.github.io  ·  yassirzahidi8@gmail.com  ·  Rabat, MA  ·  available May 2026</text>
+  <g transform="translate(1090 340)" font-family="ui-monospace, monospace" font-size="11" fill="#5cf2c1">
+    <circle r="4" fill="#5cf2c1"><animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
+    <text x="10" y="4">live</text>
+  </g>
 </svg>
