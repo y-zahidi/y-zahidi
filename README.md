@@ -1,97 +1,64 @@
 <!--
-  ┌─────────────────────────────────────────────────────────────────────┐
-  │  ~/operator-console — yassir.zahidi                                 │
-  │  every section is a real file you'd find on my SOC box.             │
-  │  built by hand — every SVG, every rule, every diagram.              │
-  └─────────────────────────────────────────────────────────────────────┘
+  ────────────────────────────────────────────────────────────────────────────
+   yassir zahidi · cybersecurity engineering student · morocco
+   i build a soc-grade lab on my own time, then i break it on purpose.
+   every visual on this page is hand-coded svg, checked into the repo.
+   no widgets, no shields-from-shields, nothing fetched at render time.
+  ────────────────────────────────────────────────────────────────────────────
 -->
 
 <a href="https://y-zahidi.github.io">
-  <img src="banner.svg" alt="Yassir Zahidi — Cybersecurity engineer-in-training · blue + red + purple — SOC, detection engineering, pentest" />
+  <img src="banner.svg" alt="Yassir Zahidi — cybersecurity engineering student · Morocco · blue · red · purple" />
 </a>
 
 <p align="center">
-  <a href="https://y-zahidi.github.io"><img alt="portfolio" src="https://img.shields.io/badge/portfolio-y--zahidi.github.io-5cf2c1?style=flat-square&labelColor=04070d&logoColor=5cf2c1"/></a>
+  <a href="https://y-zahidi.github.io"><img alt="portfolio" src="https://img.shields.io/badge/portfolio-y--zahidi.github.io-5cf2c1?style=flat-square&labelColor=04070d"/></a>
   <a href="https://github.com/y-zahidi/home-lab-siem"><img alt="home-lab-siem" src="https://img.shields.io/badge/home--lab--siem-docker_compose_up-79e2ff?style=flat-square&labelColor=04070d"/></a>
   <a href="https://www.linkedin.com/in/yassir-zahidi/"><img alt="linkedin" src="https://img.shields.io/badge/linkedin-yassir--zahidi-79e2ff?style=flat-square&labelColor=04070d"/></a>
   <a href="mailto:yassirzahidi8@gmail.com"><img alt="mail" src="https://img.shields.io/badge/mail-yassirzahidi8%40gmail.com-cfd6e4?style=flat-square&labelColor=04070d"/></a>
-  <img alt="status" src="https://img.shields.io/badge/status-shipping-5cf2c1?style=flat-square&labelColor=04070d"/>
-  <img alt="available" src="https://img.shields.io/badge/available-now-5cf2c1?style=flat-square&labelColor=04070d"/>
-  <img alt="location" src="https://img.shields.io/badge/location-Morocco-79e2ff?style=flat-square&labelColor=04070d"/>
-  <img alt="colors" src="https://img.shields.io/badge/colors-blue%20%2B%20red%20%2B%20purple-a78bfa?style=flat-square&labelColor=04070d"/>
+  <img alt="open" src="https://img.shields.io/badge/available-open-5cf2c1?style=flat-square&labelColor=04070d"/>
+  <img alt="location" src="https://img.shields.io/badge/morocco-eu_%C2%B7_remote-79e2ff?style=flat-square&labelColor=04070d"/>
 </p>
 
-```text
-$ whoami && cat /etc/role && cat /etc/looking-for
-yassir.zahidi
-specialized-technician-cybersecurity → computer-engineering-student
-SOC · detection-engineering · pentest · purple-team — open · Morocco · EU · remote
-```
+<h1 align="center">yassir zahidi</h1>
+<p align="center"><i>cybersecurity engineering student · i build a soc-grade lab on my own time, then i attack it on purpose so it gets better.</i></p>
 
-I deploy and run the kind of stack a small SOC actually uses — **Wazuh + Suricata + Sysmon + MISP + VirusTotal**, fronted by a **FortiGate** firewall and validated weekly with **Nessus** — then I attack it on purpose to see what it misses. The defensive side I built for real in May 2024 at the **Préfecture de Tétouan (SSIC, Ministère de l'Intérieur)**; the offensive muscle I sharpen on TryHackMe / HackTheBox / CTFs and inside my own lab segment. Reproducible version lives on this profile — `docker compose up` and the SOC is online.
+<img src="assets/cardstack.svg" alt="Three discipline cards — BLUE (defense — Wazuh, Suricata, Sysmon, MISP), RED (offense — nmap, BloodHound, Burp, Metasploit), PURPLE (validation loop — atomic-red-team, sigma, caldera)" />
 
-I like working at the seam: writing the rule, then writing the payload that beats the rule, then writing the better rule. **Blue** is the day job. **Red** is the gym. **Purple** is the loop.
+> blue is what i train for. red is the gym. purple is the loop where the two meet — every red find becomes a new blue rule the next day, and the rule gets re-fired against the same payload until it sticks. the rest of this page is the receipts.
 
-This page is a living operator console. Every section below is something I'd actually have open on a screen during a shift.
+---
+
+### `// table of contents`
 
 ```text
-$ ls -F /                     #  table of contents — `Ctrl+F` is your friend
-  console/        killchain/      calendar/      pipeline/
-  detection/      coverage/       playbook/      uptime/
-  experience/     projects/       stack/         certifications/
-  principles/     contact/
+01  the-lab            home-lab-siem · architecture · proof
+02  detections         triple-syntax sample · coverage matrix · playbook
+03  evidence           one-year activity calendar · live console mock
+04  history            préfecture de tétouan · alten · projects
+05  toolchain          stack heatmap · certifications · principles
+06  reach              four channels, async-first
 ```
 
 ---
 
-### `tail -f /soc/console`
+## 01 · the lab — [`home-lab-siem`](https://github.com/y-zahidi/home-lab-siem)
 
-<img src="assets/console.svg" alt="Live SOC console — KPI tiles, streaming alert tail, top-source bar chart" />
+A reproducible SOC-grade segment i run for myself. **Wazuh + Suricata + Sysmon + MISP + VirusTotal** behind a **FortiGate**, validated weekly with **Nessus** and beaten on regularly with **atomic-red-team**. The architecture mirrors what i helped deploy at the **Préfecture de Tétouan (SSIC, Ministère de l'Intérieur)** in May 2024 — repackaged so anyone can `docker compose up`.
 
-> Numbers are illustrative · architecture mirrors the Préfecture de Tétouan deployment · log lines are the same shapes the production rules emit.
-
----
+I built the lab to learn defense end-to-end. Then i started attacking it on purpose to learn offense end-to-end. The two columns of this page are the same project, just from opposite sides of the firewall.
 
 ### `play /soc/killchain.mov`
 
-A 30-second loop. An adversary walks every stage of the kill-chain — recon, phish, foothold, priv-esc, lateral, exfil — and every stage gets caught: red glow when the technique is observed, blue glow when the matching detection rule fires. The terminal at the bottom is the real `tail -f /var/log/wazuh/alerts.json | jq -r .rule.description` shape, scrolling matched alerts in real time with the same `[t+NN.Ns]` timestamps the production pipeline emits.
+A 30-second loop. An adversary walks every stage of the kill-chain — **recon → initial-access → foothold → priv-esc → lateral → exfil** — and every stage gets caught. Red glow when the technique is observed; blue glow when the matching detection rule fires. The terminal at the bottom is the same `tail -f /var/log/wazuh/alerts.json | jq -r .rule.description` shape that runs in the lab.
 
-<img src="assets/killchain.svg" alt="Animated kill-chain detection movie — 6 stages × adversary techniques × matching SIGMA rules · 30s loop" />
+<img src="assets/killchain.svg" alt="Animated kill-chain detection movie — six stages, adversary techniques on top, matching SIGMA rules on the bottom · 30s SMIL loop" />
 
-> Hand-coded SVG. SMIL animations, no external libs, no JS. Same MITRE technique IDs the home-lab-siem actually fires on (T1595, T1566.001, T1059.001, T1548.002, T1003.001, T1048.003). MTTD median ≤ 1.7 s in this run · MTTR median ≤ 0.6 s · 6/6 stages contained.
+> hand-coded SVG · SMIL only · no JS · same MITRE technique IDs the lab actually fires on (T1595, T1566.001, T1059.001, T1548.002, T1003.001, T1048.003) · MTTD median ≤ 1.7 s in this run, MTTR median ≤ 0.6 s, 6/6 stages contained.
 
----
+### `pipeline.mmd`
 
-### `cat /detection/calendar`
-
-What detection engineering actually looks like across a year — rules shipped, atomic-red-team tests run, red→blue closures documented. Each cell is a day; darker cells are higher-volume weeks. The blue cursor sweeps left-to-right on a 20-second loop because the backlog never sleeps.
-
-<img src="assets/heatmap.svg" alt="Detection-engineering activity calendar — 52 weeks × 7 days · 687 contributions · 28 in best week" />
-
-> Same vocabulary as the [portfolio heatmap](https://y-zahidi.github.io/#heatmap) — different surface. Numbers come from a deterministic seed so the page stays stable across refreshes; the *shape* (winter peak, weekend dip, ship-streak in the back half) reflects how the lab actually runs.
-
----
-
-### `cat /now`
-
-```yaml
-location:    Morocco
-timezone:    Africa/Casablanca · GMT+1
-blue:        home-lab-siem (atomic-red-team validation · MISP correlation · sigma pipeline)
-red:         OSCP path · Active Directory pivoting · web/AD machines on HTB + THM weekly
-purple:      every red find is a new wazuh rule the next day — documented in ctf-writeups
-shipping:    custom Wazuh decoders for FortiGate + Sysmon channel
-reading:     "The Practice of Network Security Monitoring" — Bejtlich · "The Hacker Playbook 3"
-listening:   ColorADD · Maâlem Hamid el Kasri · Caravan Palace
-available:   open — remote / EU / Morocco · respond < 24h
-contact:     yassirzahidi8@gmail.com
-```
-
----
-
-### `cat /pipeline/home-lab-siem.mmd`
-
-How a single suspicious sign-in travels from the host to a triaged ticket — the actual flow that runs in [home-lab-siem](https://github.com/y-zahidi/home-lab-siem).
+How a single suspicious sign-in travels from the host to a triaged ticket — the actual flow that runs inside [`home-lab-siem`](https://github.com/y-zahidi/home-lab-siem).
 
 <!-- ctf{2/3} flag{yz_alerts_are_just_questions_we_finally_answered} — nice. one to go: open the portfolio, hit `:` and try `:flag`. -->
 
@@ -127,9 +94,11 @@ flowchart LR
 
 ---
 
-### `cat /detection/sample.{xml,yml,rules}`
+## 02 · detections
 
-Three syntaxes, one threat. Same impossible-travel sign-in pattern, written for **Wazuh**, **Sigma**, and **Suricata** — because real detection engineering means picking the right layer for each signal. All three map to MITRE [`T1078`](https://attack.mitre.org/techniques/T1078/) (*Valid Accounts*).
+### `sample.{xml,yml,rules}` — three syntaxes, one threat
+
+Same impossible-travel sign-in pattern, written for **Wazuh**, **Sigma**, and **Suricata**, because real detection means picking the right layer for each signal. All three map to MITRE [`T1078`](https://attack.mitre.org/techniques/T1078/) (*Valid Accounts*).
 
 <details open>
 <summary><b>wazuh</b> · <code>rules/100210-imp-travel.xml</code> · authentication layer</summary>
@@ -196,46 +165,56 @@ alert tls $HOME_NET any -> $EXTERNAL_NET any ( \
 
 </details>
 
-[View the live coverage matrix on the portfolio →](https://y-zahidi.github.io/#detect)
+[See the live transpiler on the portfolio →](https://y-zahidi.github.io/#detect) — same sigma rule compiled live to Wazuh / Splunk SPL / KQL / Suricata as you type.
 
----
+### coverage matrix
 
-### `cat /detection/coverage.svg`
+The grid is honest: **bright = a rule is shipping today**, **dim = on the roadmap**, **black = out of scope for the home lab** (e.g. air-gap exfil, hardware initial-access). New cells light up as i push to `home-lab-siem`.
 
 <img src="assets/coverage.svg" alt="MITRE ATT&CK detection coverage matrix — 12 tactics, current shipping coverage shaded by intensity" />
 
-The grid is honest: **bright = I have a rule shipping today**, **dim = on the roadmap**, **black = out of scope for the home lab** (e.g. air-gap exfil, hardware initial access). New cells light up as I push to [home-lab-siem](https://github.com/y-zahidi/home-lab-siem).
+### incident-response playbook
 
----
-
-### `cat /etc/playbook`
-
-What actually happens between *"a rule fired"* and *"the ticket is closed"*. Six stages, with the time-budget I personally hold myself to before escalating. The same shape applies whether it's an SSH brute-force or an LSASS dump.
+What happens between *"a rule fired"* and *"the ticket is closed"*. Six stages, with the time budget i hold myself to before escalating. Same shape whether it's an SSH brute-force or an LSASS dump.
 
 <img src="assets/playbook.svg" alt="Incident response playbook — alert → triage → contain → eradicate → recover → review with time budgets per stage" />
 
 ---
 
-### `cat /uptime`
+## 03 · evidence
 
-What the lab looks like, right now — same panel I'd glance at first thing in the morning on a real shift. Seven days of synthetic uptime per component, last 50 alerts feed.
+### one year of detection engineering
+
+Each cell is a day; darker cells = higher-volume weeks. The blue cursor sweeps left-to-right on a 20-second loop because the backlog never sleeps. *Numbers come from a deterministic seed so the page is stable; the **shape** (winter peak, weekend dip, ship-streak in the back half) is how the lab actually runs.*
+
+<img src="assets/heatmap.svg" alt="Detection-engineering activity calendar — 52 weeks × 7 days · 687 contributions · 28 in best week · 12 median weekly" />
+
+### what a shift looks like — `tail -f /soc/console`
+
+The KPI tiles on the left are the metrics i'd check first thing on a real shift: alerts/24 h, EPS, MTTD, IOC feed health, lab uptime. The streaming log on the right is the shape the production rules emit; only the timestamps move.
+
+<img src="assets/console.svg" alt="Live SOC console mock — KPI tiles, streaming alert tail, top-source bar chart" />
+
+### lab uptime — `/uptime`
+
+Seven days of synthetic uptime per component, last 50 alerts feed.
 
 <img src="assets/uptime.svg" alt="Lab uptime panel — wazuh-mgr, suricata, fortigate, sysmon, MISP, VT, CIRCL with 7-day sparklines" />
 
 ---
 
-### `ls production-experience/`
+## 04 · history
 
 <details open>
 <summary><b>Préfecture de Tétouan — Ministère de l'Intérieur (SSIC)</b> · <i>Cybersecurity Intern · 02 May → 31 May 2024</i></summary>
 
 > *Real ministry network. Real perimeter. Real consequences.*
 
-- Designed and deployed a **multi-layer SIEM** on the production segment: Wazuh manager + Suricata IDS + Sysmon (Windows agents) + MISP threat-intel + VirusTotal lookups.
+- Helped design and deploy a **multi-layer SIEM** on the production segment: Wazuh manager + Suricata IDS + Sysmon (Windows agents) + MISP threat-intel + VirusTotal lookups.
 - Wrote **custom Wazuh decoders** for FortiGate syslog so we'd stop losing fields on rotation; mapped Suricata EVE alerts to MITRE ATT&CK in the alert pipeline.
 - Wired MISP **CIRCL + abuse.ch** feeds on a 6-hour sync, plumbed VirusTotal hashing for any Sysmon `EventID=1` with a non-signed binary parent.
 - Weekly **Nessus** scans against the perimeter, triage report to the SSIC chief.
-- The full architecture, repackaged so anyone can `docker compose up`, lives at [`home-lab-siem`](https://github.com/y-zahidi/home-lab-siem).
+- The architecture, repackaged so anyone can `docker compose up`, lives at [`home-lab-siem`](https://github.com/y-zahidi/home-lab-siem).
 
 </details>
 
@@ -248,31 +227,27 @@ What the lab looks like, right now — same panel I'd glance at first thing in t
 
 </details>
 
----
+### projects
 
-### `ls projects/`
-
-| Project | Stack | What it actually does |
+| project | stack | what it actually does |
 |---|---|---|
-| **[home-lab-siem](https://github.com/y-zahidi/home-lab-siem)** | Wazuh · Suricata · Sysmon · MISP · Docker | The internship architecture, packaged. `docker compose up` and the SOC is live. |
-| **[ctf-writeups](https://github.com/y-zahidi/ctf-writeups)** | Markdown | TryHackMe / HTB walkthroughs — methodology over flags, consistent template. |
-| **[pentest-cheatsheet](https://github.com/y-zahidi/pentest-cheatsheet)** | Markdown | The cheatsheet I actually use — recon → AD → web → post-ex. |
-| **[water-stress-morocco-analytics](https://github.com/y-zahidi/water-stress-morocco-analytics)** | MySQL · QlikView · Star schema | DWH on water stress in Morocco — 68k rows, 12 regions, 2015–2025. |
+| **[home-lab-siem](https://github.com/y-zahidi/home-lab-siem)** | Wazuh · Suricata · Sysmon · MISP · Docker | the internship architecture, packaged. `docker compose up` and the SOC is live. |
+| **[ctf-writeups](https://github.com/y-zahidi/ctf-writeups)** | Markdown | TryHackMe / HTB walkthroughs — methodology over flags, one consistent template. |
+| **[pentest-cheatsheet](https://github.com/y-zahidi/pentest-cheatsheet)** | Markdown | the cheatsheet i actually use — recon → AD → web → post-ex. |
+| **[water-stress-morocco-analytics](https://github.com/y-zahidi/water-stress-morocco-analytics)** | MySQL · QlikView · star schema | DWH on water stress in Morocco — 68k rows, 12 regions, 2015–2025. |
 | **[FacturationPro-Enterprise](https://github.com/y-zahidi/FacturationPro-Enterprise)** | C++ · VCL · MySQL | Windows desktop billing — multi-user, role-based, PDF export. |
 
 Also: [HTMLCamp](https://github.com/y-zahidi/HTMLCamp) · [Rabat-Cultural-Website](https://github.com/y-zahidi/Rabat-Cultural-Website)
 
 ---
 
-### `cat /etc/stack`
+## 05 · toolchain
 
 <img src="assets/stack.svg" alt="Stack heatmap — fluency by domain (detection, threat-intel, perimeter, offensive, OS/identity, languages, infra)" />
 
----
+### certifications
 
-### `ls certifications/`
-
-| Issuer | Credential |
+| issuer | credential |
 |---|---|
 | Cisco | CCNA 1, 2 & 3 |
 | Fortinet | FCF · NSE 1 · NSE 2 · NSE 3 |
@@ -281,9 +256,7 @@ Also: [HTMLCamp](https://github.com/y-zahidi/HTMLCamp) · [Rabat-Cultural-Websit
 | Orange Digital Center | Cybersecurity — Morocco |
 | French Embassy | DELF B2 — Diplôme d'Études en Langue Française (2025) |
 
----
-
-### `cat /etc/principles`
+### principles
 
 ```text
 1. detection without telemetry is theater
@@ -291,57 +264,37 @@ Also: [HTMLCamp](https://github.com/y-zahidi/HTMLCamp) · [Rabat-Cultural-Websit
 3. every alert ships with triage steps, a mitre id, and the payload that proves it fires
 4. write the runbook before you need it; rehearse it with atomic-red-team
 5. an alert nobody reads is worse than no alert
-6. document the falsepositive that almost fooled you, by name
-7. blue is the day job, red is the gym, purple is the loop — you don't get to skip leg day
+6. document the false-positive that almost fooled you, by name
+7. blue is what i train for, red is the gym, purple is the loop — no skipped leg-day
 ```
 
 ---
 
-### `cat /etc/contact`
+## 06 · reach
 
-Four open channels. Pick whichever suits the conversation. First response within 24 h, async-first, time zone Africa/Casablanca.
+Four channels. First reply within 24 h, async-first, time zone Africa/Casablanca.
 
-<img src="assets/contact.svg" alt="Secure contact channel — portfolio, email, linkedin, github, with response SLA and signed fingerprint" />
+<img src="assets/contact.svg" alt="Secure contact channel — portfolio, mail, linkedin, github, with response SLA and a signed fingerprint" />
 
 <table>
-  <tr>
-    <td><b>web</b></td>
-    <td><a href="https://y-zahidi.github.io"><code>y-zahidi.github.io</code></a></td>
-    <td>portfolio · live SOC console · sigma playground</td>
-  </tr>
-  <tr>
-    <td><b>mail</b></td>
-    <td><a href="mailto:yassirzahidi8@gmail.com"><code>yassirzahidi8@gmail.com</code></a></td>
-    <td>roles · pentest gigs · interesting CTFs</td>
-  </tr>
-  <tr>
-    <td><b>net</b></td>
-    <td><a href="https://www.linkedin.com/in/yassir-zahidi/"><code>linkedin/in/yassir-zahidi</code></a></td>
-    <td>résumé · recommendations · timeline</td>
-  </tr>
-  <tr>
-    <td><b>code</b></td>
-    <td><a href="https://github.com/y-zahidi"><code>github.com/y-zahidi</code></a></td>
-    <td>everything you can read on this page</td>
-  </tr>
-  <tr>
-    <td><b>cv</b></td>
-    <td><a href="https://y-zahidi.github.io/resume.json"><code>resume.json</code></a></td>
-    <td>JSON-Resume schema · machine-readable</td>
-  </tr>
+  <tr><td><b>web</b></td><td><a href="https://y-zahidi.github.io"><code>y-zahidi.github.io</code></a></td><td>portfolio · live SOC console mock · sigma playground</td></tr>
+  <tr><td><b>mail</b></td><td><a href="mailto:yassirzahidi8@gmail.com"><code>yassirzahidi8@gmail.com</code></a></td><td>roles · pentest gigs · interesting CTFs</td></tr>
+  <tr><td><b>net</b></td><td><a href="https://www.linkedin.com/in/yassir-zahidi/"><code>linkedin/in/yassir-zahidi</code></a></td><td>résumé · recommendations · timeline</td></tr>
+  <tr><td><b>code</b></td><td><a href="https://github.com/y-zahidi"><code>github.com/y-zahidi</code></a></td><td>everything you can read on this page</td></tr>
+  <tr><td><b>cv</b></td><td><a href="https://y-zahidi.github.io/resume.json"><code>resume.json</code></a></td><td>JSON-Resume schema · machine-readable</td></tr>
 </table>
 
 ```text
 $ exit 0
-connection closed by foreign host.
+connection closed.  thanks for reading the receipts.
 ```
 
 <!--
   ───────────────────────────────────────────────────────────────────────
-  if you read source you're already half a SOC analyst.
-  ctf{1/3} → flag{yz_read_my_decoders_-_let_us_talk}
-  hint   → ctf{2/3} hides in /pipeline/home-lab-siem.mmd
-  hint   → ctf{3/3} hides on the portfolio site, behind a vim cmdline
-  signal me. the coffee is on me.
+   if you read source you're already halfway there.
+   ctf{1/3} → flag{yz_read_my_decoders_-_let_us_talk}
+   hint    → ctf{2/3} hides in the pipeline.mmd block, above
+   hint    → ctf{3/3} hides on the portfolio site, behind a vim cmdline
+   signal me. the coffee is on me.
   ───────────────────────────────────────────────────────────────────────
 -->
