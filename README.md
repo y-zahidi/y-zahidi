@@ -34,6 +34,14 @@ I like working at the seam: writing the rule, then writing the payload that beat
 
 This page is a living operator console. Every section below is something I'd actually have open on a screen during a shift.
 
+```text
+$ ls -F /                     #  table of contents — `Ctrl+F` is your friend
+  console/        killchain/      calendar/      pipeline/
+  detection/      coverage/       playbook/      uptime/
+  experience/     projects/       stack/         certifications/
+  principles/     contact/
+```
+
 ---
 
 ### `tail -f /soc/console`
@@ -291,7 +299,37 @@ Also: [HTMLCamp](https://github.com/y-zahidi/HTMLCamp) · [Rabat-Cultural-Websit
 
 ### `cat /etc/contact`
 
-[`portfolio: y-zahidi.github.io`](https://y-zahidi.github.io) · [`linkedin: yassir-zahidi`](https://www.linkedin.com/in/yassir-zahidi/) · [`mail: yassirzahidi8@gmail.com`](mailto:yassirzahidi8@gmail.com) · [`resume.json`](https://y-zahidi.github.io/resume.json)
+Four open channels. Pick whichever suits the conversation. First response within 24 h, async-first, time zone Africa/Casablanca.
+
+<img src="assets/contact.svg" alt="Secure contact channel — portfolio, email, linkedin, github, with response SLA and signed fingerprint" />
+
+<table>
+  <tr>
+    <td><b>web</b></td>
+    <td><a href="https://y-zahidi.github.io"><code>y-zahidi.github.io</code></a></td>
+    <td>portfolio · live SOC console · sigma playground</td>
+  </tr>
+  <tr>
+    <td><b>mail</b></td>
+    <td><a href="mailto:yassirzahidi8@gmail.com"><code>yassirzahidi8@gmail.com</code></a></td>
+    <td>roles · pentest gigs · interesting CTFs</td>
+  </tr>
+  <tr>
+    <td><b>net</b></td>
+    <td><a href="https://www.linkedin.com/in/yassir-zahidi/"><code>linkedin/in/yassir-zahidi</code></a></td>
+    <td>résumé · recommendations · timeline</td>
+  </tr>
+  <tr>
+    <td><b>code</b></td>
+    <td><a href="https://github.com/y-zahidi"><code>github.com/y-zahidi</code></a></td>
+    <td>everything you can read on this page</td>
+  </tr>
+  <tr>
+    <td><b>cv</b></td>
+    <td><a href="https://y-zahidi.github.io/resume.json"><code>resume.json</code></a></td>
+    <td>JSON-Resume schema · machine-readable</td>
+  </tr>
+</table>
 
 ```text
 $ exit 0
