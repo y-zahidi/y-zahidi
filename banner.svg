@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Yassir Zahidi — cybersecurity engineer-in-training">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#050810"/>
+      <stop offset=".55" stop-color="#08111d"/>
+      <stop offset="1"   stop-color="#0a1424"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".82" cy=".22" r=".75">
+      <stop offset="0"  stop-color="#79e2ff" stop-opacity=".22"/>
+      <stop offset=".5" stop-color="#5cf2c1" stop-opacity=".07"/>
+      <stop offset="1"  stop-color="#000"    stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5cf2c1"/>
+      <stop offset="1" stop-color="#79e2ff"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#142036" stroke-width="1"/>
+    </pattern>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="320" fill="url(#bg)"/>
+  <rect width="1200" height="320" fill="url(#grid)" opacity=".55"/>
+  <rect width="1200" height="320" fill="url(#glow)"/>
+
+  <!-- corner ticks -->
+  <g stroke="#1f2f4a" stroke-width="1.5" fill="none">
+    <path d="M22 22 L22 60 M22 22 L60 22"/>
+    <path d="M1178 22 L1140 22 M1178 22 L1178 60"/>
+    <path d="M22 298 L22 260 M22 298 L60 298"/>
+    <path d="M1178 298 L1140 298 M1178 298 L1178 260"/>
+  </g>
+
+  <!-- prompt header -->
+  <g transform="translate(60 70)" font-family="ui-monospace, 'JetBrains Mono', SFMono-Regular, Menlo, monospace">
+    <text font-size="14" fill="#54688a" letter-spacing="3">~ /yassir-zahidi</text>
+    <text y="22" font-size="18" fill="#5cf2c1">$</text>
+    <text x="22" y="22" font-size="18" fill="#e2e9f6">cat README.md</text>
+  </g>
+
+  <!-- name -->
+  <g transform="translate(60 165)" font-family="Inter, system-ui, sans-serif">
+    <text font-size="62" font-weight="700" fill="#e2e9f6" letter-spacing="-1.5">Yassir Zahidi</text>
+    <text y="34" font-size="20" fill="#8ea0bd" font-weight="400">Cybersecurity engineer-in-training · SOC / blue team / detection engineering</text>
+  </g>
+
+  <!-- chips -->
+  <g transform="translate(60 250)" font-family="ui-monospace, monospace" font-size="14">
+    <g><rect width="92"  height="30" rx="6" fill="#0a1424" stroke="#1f2f4a"/><text x="14" y="20" fill="#79e2ff">wazuh</text></g>
+    <g transform="translate(102 0)"><rect width="100" height="30" rx="6" fill="#0a1424" stroke="#1f2f4a"/><text x="14" y="20" fill="#79e2ff">suricata</text></g>
+    <g transform="translate(212 0)"><rect width="92"  height="30" rx="6" fill="#0a1424" stroke="#1f2f4a"/><text x="14" y="20" fill="#79e2ff">sysmon</text></g>
+    <g transform="translate(314 0)"><rect width="78"  height="30" rx="6" fill="#0a1424" stroke="#1f2f4a"/><text x="14" y="20" fill="#79e2ff">misp</text></g>
+    <g transform="translate(402 0)"><rect width="106" height="30" rx="6" fill="#0a1424" stroke="#1f2f4a"/><text x="14" y="20" fill="#79e2ff">fortigate</text></g>
+    <g transform="translate(518 0)"><rect width="86"  height="30" rx="6" fill="#0a1424" stroke="#1f2f4a"/><text x="14" y="20" fill="#79e2ff">nessus</text></g>
+    <g transform="translate(614 0)"><rect width="84"  height="30" rx="6" fill="#0a1424" stroke="#1f2f4a"/><text x="14" y="20" fill="#79e2ff">docker</text></g>
+  </g>
+
+  <!-- right brand mark -->
+  <g transform="translate(1010 160)">
+    <circle r="92"  fill="url(#accent)" opacity=".18" filter="url(#soft)"/>
+    <circle r="86"  fill="none" stroke="url(#accent)" stroke-width="1.5" opacity=".7"/>
+    <rect x="-72" y="-72" width="144" height="144" rx="16" fill="#0a1424" stroke="#1f2f4a" stroke-width="1.5"/>
+    <text x="0" y="14" text-anchor="middle"
+          font-family="ui-monospace, 'JetBrains Mono', monospace"
+          font-size="100" font-weight="700" fill="url(#accent)" letter-spacing="-3">yz</text>
+    <rect x="48" y="-44" width="11" height="86" fill="#5cf2c1">
+      <animate attributeName="opacity" values="1;0;1" dur="1.1s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- bottom URL -->
+  <text x="60" y="305" font-family="ui-monospace, monospace" font-size="13" fill="#54688a" letter-spacing="2">y-zahidi.github.io  ·  yassirzahidi8@gmail.com  ·  Rabat, MA</text>
+</svg>
