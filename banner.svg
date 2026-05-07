@@ -28,17 +28,18 @@
     <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="10"/>
     </filter>
-    <clipPath id="clipL1"><rect x="0" y="0" width="0" height="22"><animate attributeName="width" values="0;230" dur="1.2s" begin="0s" fill="freeze"/></rect></clipPath>
-    <clipPath id="clipL2"><rect x="0" y="0" width="0" height="22"><animate attributeName="width" values="0;520" dur="1.2s" begin="1.4s" fill="freeze"/></rect></clipPath>
-    <clipPath id="clipL3"><rect x="0" y="0" width="0" height="22"><animate attributeName="width" values="0;360" dur="1.4s" begin="2.8s" fill="freeze"/></rect></clipPath>
-    <clipPath id="clipL4"><rect x="0" y="0" width="0" height="22"><animate attributeName="width" values="0;560" dur="1.4s" begin="4.4s" fill="freeze"/></rect></clipPath>
+    <clipPath id="clipL1"><rect x="-4" y="-16" width="0" height="24"><animate attributeName="width" values="0;320" dur="1.2s" begin="0s" fill="freeze"/></rect></clipPath>
+    <clipPath id="clipL2"><rect x="-4" y="-16" width="0" height="24"><animate attributeName="width" values="0;640" dur="1.2s" begin="1.4s" fill="freeze"/></rect></clipPath>
+    <clipPath id="clipL3"><rect x="-4" y="-16" width="0" height="24"><animate attributeName="width" values="0;420" dur="1.4s" begin="2.8s" fill="freeze"/></rect></clipPath>
+    <clipPath id="clipL4"><rect x="-4" y="-16" width="0" height="24"><animate attributeName="width" values="0;760" dur="1.4s" begin="4.4s" fill="freeze"/></rect></clipPath>
     <clipPath id="clipName"><rect x="0" y="0" width="0" height="80"><animate attributeName="width" values="0;460" dur="1.4s" begin="6.0s" fill="freeze"/></rect></clipPath>
     <clipPath id="clipSub"><rect x="0" y="0" width="0" height="36"><animate attributeName="width" values="0;640" dur="1.6s" begin="7.5s" fill="freeze"/></rect></clipPath>
   </defs>
 
   <rect width="1200" height="360" fill="url(#bg)"/>
-  <rect width="1200" height="360" fill="url(#grid)" opacity=".55"/>
+  <rect width="1200" height="360" fill="url(#grid)" opacity=".28"/>
   <rect width="1200" height="360" fill="url(#glow)"/>
+  <rect x="40" y="82" width="840" height="108" rx="8" fill="#04070d" opacity=".55"/>
   <rect width="1200" height="120" fill="url(#scan)">
     <animate attributeName="y" values="-120;360" dur="6s" repeatCount="indefinite"/>
   </rect>
@@ -60,22 +61,22 @@
   </g>
 
   <!-- typed prompt lines -->
-  <g transform="translate(60 100)" font-family="ui-monospace, 'JetBrains Mono', SFMono-Regular, Menlo, monospace" font-size="14">
+  <g transform="translate(60 104)" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Code', 'Fira Code', SFMono-Regular, Menlo, Consolas, monospace" font-size="15" font-weight="500">
     <g clip-path="url(#clipL1)">
-      <text fill="#5cf2c1">$</text>
-      <text x="14" fill="#e2e9f6">whoami &amp;&amp; cat /etc/role</text>
+      <text fill="#5cf2c1" font-weight="700">$</text>
+      <text x="14" fill="#f1f5fb">whoami &amp;&amp; cat /etc/role</text>
     </g>
     <g transform="translate(0 22)" clip-path="url(#clipL2)">
-      <text fill="#8ea0bd">yassir.zahidi</text>
-      <text x="100" fill="#54688a">·</text>
-      <text x="112" fill="#79e2ff">specialized-technician → computer-engineering-student</text>
+      <text fill="#cfd6e4">yassir.zahidi</text>
+      <text x="112" fill="#54688a">·</text>
+      <text x="124" fill="#79e2ff">specialized-technician → computer-engineering-student</text>
     </g>
     <g transform="translate(0 50)" clip-path="url(#clipL3)">
-      <text fill="#5cf2c1">$</text>
-      <text x="14" fill="#e2e9f6">grep -i looking-for ./status.yml</text>
+      <text fill="#5cf2c1" font-weight="700">$</text>
+      <text x="14" fill="#f1f5fb">grep -i looking-for ./status.yml</text>
     </g>
     <g transform="translate(0 72)" clip-path="url(#clipL4)">
-      <text fill="#8ea0bd">SOC / blue-team / DevSecOps internship — 2026 — Morocco · EU · remote</text>
+      <text fill="#cfd6e4">SOC / blue-team / DevSecOps internship — 2026 — Morocco · EU · remote</text>
     </g>
   </g>
 
