@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380" role="img" aria-label="Incident response playbook — alert, triage, contain, eradicate, recover, review with time budgets per stage">
+  <title>Incident response playbook · ir-playbook v1.4</title>
+  <desc>Six-stage IR timeline: alert (0s) → triage (&lt;5m) → contain (&lt;15m) → eradicate (&lt;2h) → recover (&lt;8h) → review (&lt;72h). Each stage has a time budget and a one-line action. A scanning highlight cycles through the stages.</desc>
+  <defs>
+    <linearGradient id="pb-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#04070d"/>
+      <stop offset=".55" stop-color="#08111d"/>
+      <stop offset="1"   stop-color="#0a1424"/>
+    </linearGradient>
+    <linearGradient id="pb-accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5cf2c1"/>
+      <stop offset="1" stop-color="#79e2ff"/>
+    </linearGradient>
+    <linearGradient id="pb-warn" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffb86b"/>
+      <stop offset="1" stop-color="#febc2e"/>
+    </linearGradient>
+    <linearGradient id="pb-bad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff6b8b"/>
+      <stop offset="1" stop-color="#ff5f57"/>
+    </linearGradient>
+    <pattern id="pb-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#142036" stroke-width="1"/>
+    </pattern>
+    <filter id="pb-soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="380" fill="url(#pb-bg)"/>
+  <rect width="1200" height="380" fill="url(#pb-grid)" opacity=".22"/>
+
+  <!-- corner ticks -->
+  <g stroke="#1f2f4a" stroke-width="1.5" fill="none">
+    <path d="M22 22 L22 60 M22 22 L60 22"/>
+    <path d="M1178 22 L1140 22 M1178 22 L1178 60"/>
+    <path d="M22 358 L22 320 M22 358 L60 358"/>
+    <path d="M1178 358 L1140 358 M1178 358 L1178 320"/>
+  </g>
+
+  <!-- header -->
+  <g transform="translate(60 56)" font-family="ui-monospace, 'JetBrains Mono', SFMono-Regular, Menlo, monospace">
+    <circle r="6" fill="#ff5f57"/>
+    <circle cx="20" r="6" fill="#febc2e"/>
+    <circle cx="40" r="6" fill="#28c840"/>
+    <text x="60" y="5" font-size="12" fill="#54688a" letter-spacing="2">~/runbooks/ir-playbook.v1.4 — owner yassir.zahidi — last drill 7d ago — drill cadence 30d</text>
+    <g transform="translate(870 -2)" font-size="11" fill="#5cf2c1">
+      <circle r="4" fill="#5cf2c1"><animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
+      <text x="10" y="4">drill ready</text>
+    </g>
+  </g>
+
+  <!-- timeline rail -->
+  <g transform="translate(80 168)">
+    <!-- background rail -->
+    <line x1="0" y1="0" x2="1040" y2="0" stroke="#1f2f4a" stroke-width="2" stroke-linecap="round"/>
+    <!-- progress rail (flows L → R) -->
+    <line x1="0" y1="0" x2="0" y2="0" stroke="url(#pb-accent)" stroke-width="2.5" stroke-linecap="round" opacity=".85">
+      <animate attributeName="x2" values="0;1040" dur="14s" repeatCount="indefinite"/>
+    </line>
+    <!-- moving probe -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,0;1040,0" dur="14s" repeatCount="indefinite"/>
+      <circle r="6" fill="#5cf2c1"/>
+      <circle r="14" fill="none" stroke="#5cf2c1" stroke-width="1.5" opacity=".55">
+        <animate attributeName="r" values="6;18;6" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values=".75;0;.75" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- 6 stage cards -->
+  <g font-family="ui-monospace, 'JetBrains Mono', SFMono-Regular, Menlo, monospace">
+    <!-- stage 1 — ALERT -->
+    <g transform="translate(60 88)">
+      <rect width="160" height="160" rx="10" fill="#0a1424" stroke="url(#pb-bad)" stroke-width="1.5"/>
+      <rect x="0" y="0" width="160" height="3" rx="1.5" fill="url(#pb-bad)"/>
+      <text x="14" y="26" font-size="10" fill="#ff8a8a" letter-spacing="2">01 · TRIGGER</text>
+      <text x="14" y="58" font-size="20" fill="#f1f5fb" font-weight="700" font-family="Inter, system-ui, sans-serif">alert</text>
+      <text x="14" y="80" font-size="11" fill="#cfd6e4">rule fires → siem</text>
+      <text x="14" y="98" font-size="11" fill="#8ea0bd">level ≥ 10 · enriched</text>
+      <text x="14" y="116" font-size="11" fill="#8ea0bd">tag: mitre · src ip</text>
+      <text x="14" y="146" font-size="10" fill="#ff8a8a" font-weight="700">t = 0s</text>
+      <text x="74" y="146" font-size="9" fill="#54688a">page on-call</text>
+    </g>
+
+    <!-- stage 2 — TRIAGE -->
+    <g transform="translate(238 88)">
+      <rect width="160" height="160" rx="10" fill="#0a1424" stroke="url(#pb-warn)" stroke-width="1.5"/>
+      <rect x="0" y="0" width="160" height="3" rx="1.5" fill="url(#pb-warn)"/>
+      <text x="14" y="26" font-size="10" fill="#ffb86b" letter-spacing="2">02 · DECIDE</text>
+      <text x="14" y="58" font-size="20" fill="#f1f5fb" font-weight="700" font-family="Inter, system-ui, sans-serif">triage</text>
+      <text x="14" y="80" font-size="11" fill="#cfd6e4">validate · scope · own</text>
+      <text x="14" y="98" font-size="11" fill="#8ea0bd">true / false positive</text>
+      <text x="14" y="116" font-size="11" fill="#8ea0bd">ticket + severity</text>
+      <text x="14" y="146" font-size="10" fill="#ffb86b" font-weight="700">≤ 5 min</text>
+      <text x="74" y="146" font-size="9" fill="#54688a">enrich · misp · vt</text>
+    </g>
+
+    <!-- stage 3 — CONTAIN -->
+    <g transform="translate(416 88)">
+      <rect width="160" height="160" rx="10" fill="#0a1424" stroke="url(#pb-accent)" stroke-width="1.5"/>
+      <rect x="0" y="0" width="160" height="3" rx="1.5" fill="url(#pb-accent)"/>
+      <text x="14" y="26" font-size="10" fill="#79e2ff" letter-spacing="2">03 · LIMIT</text>
+      <text x="14" y="58" font-size="20" fill="#f1f5fb" font-weight="700" font-family="Inter, system-ui, sans-serif">contain</text>
+      <text x="14" y="80" font-size="11" fill="#cfd6e4">isolate · kill session</text>
+      <text x="14" y="98" font-size="11" fill="#8ea0bd">edr quarantine</text>
+      <text x="14" y="116" font-size="11" fill="#8ea0bd">fortigate block list</text>
+      <text x="14" y="146" font-size="10" fill="#5cf2c1" font-weight="700">≤ 15 min</text>
+      <text x="80" y="146" font-size="9" fill="#54688a">stop the bleed</text>
+    </g>
+
+    <!-- stage 4 — ERADICATE -->
+    <g transform="translate(594 88)">
+      <rect width="160" height="160" rx="10" fill="#0a1424" stroke="url(#pb-accent)" stroke-width="1.5"/>
+      <rect x="0" y="0" width="160" height="3" rx="1.5" fill="url(#pb-accent)"/>
+      <text x="14" y="26" font-size="10" fill="#79e2ff" letter-spacing="2">04 · CLEAN</text>
+      <text x="14" y="58" font-size="20" fill="#f1f5fb" font-weight="700" font-family="Inter, system-ui, sans-serif">eradicate</text>
+      <text x="14" y="80" font-size="11" fill="#cfd6e4">remove · rotate · patch</text>
+      <text x="14" y="98" font-size="11" fill="#8ea0bd">credential reset</text>
+      <text x="14" y="116" font-size="11" fill="#8ea0bd">persistence sweep</text>
+      <text x="14" y="146" font-size="10" fill="#5cf2c1" font-weight="700">≤ 2 h</text>
+      <text x="60" y="146" font-size="9" fill="#54688a">verify with hunt rules</text>
+    </g>
+
+    <!-- stage 5 — RECOVER -->
+    <g transform="translate(772 88)">
+      <rect width="160" height="160" rx="10" fill="#0a1424" stroke="url(#pb-accent)" stroke-width="1.5"/>
+      <rect x="0" y="0" width="160" height="3" rx="1.5" fill="url(#pb-accent)"/>
+      <text x="14" y="26" font-size="10" fill="#79e2ff" letter-spacing="2">05 · RESTORE</text>
+      <text x="14" y="58" font-size="20" fill="#f1f5fb" font-weight="700" font-family="Inter, system-ui, sans-serif">recover</text>
+      <text x="14" y="80" font-size="11" fill="#cfd6e4">bring service back</text>
+      <text x="14" y="98" font-size="11" fill="#8ea0bd">elevated monitoring</text>
+      <text x="14" y="116" font-size="11" fill="#8ea0bd">user comms · ack</text>
+      <text x="14" y="146" font-size="10" fill="#5cf2c1" font-weight="700">≤ 8 h</text>
+      <text x="60" y="146" font-size="9" fill="#54688a">watch for re-entry</text>
+    </g>
+
+    <!-- stage 6 — REVIEW -->
+    <g transform="translate(950 88)">
+      <rect width="170" height="160" rx="10" fill="#0a1424" stroke="url(#pb-accent)" stroke-width="1.5" stroke-dasharray="0"/>
+      <rect x="0" y="0" width="170" height="3" rx="1.5" fill="url(#pb-accent)"/>
+      <text x="14" y="26" font-size="10" fill="#79e2ff" letter-spacing="2">06 · LEARN</text>
+      <text x="14" y="58" font-size="20" fill="#f1f5fb" font-weight="700" font-family="Inter, system-ui, sans-serif">review</text>
+      <text x="14" y="80" font-size="11" fill="#cfd6e4">postmortem · runbook</text>
+      <text x="14" y="98" font-size="11" fill="#8ea0bd">new detection rule</text>
+      <text x="14" y="116" font-size="11" fill="#8ea0bd">+1 to coverage matrix</text>
+      <text x="14" y="146" font-size="10" fill="#5cf2c1" font-weight="700">≤ 72 h</text>
+      <text x="60" y="146" font-size="9" fill="#54688a">file in /writeups/</text>
+    </g>
+  </g>
+
+  <!-- bottom KPI strip -->
+  <g transform="translate(60 290)" font-family="ui-monospace, 'JetBrains Mono', monospace">
+    <rect x="0" y="0" width="1080" height="60" rx="8" fill="#04070d" opacity=".55" stroke="#1f2f4a"/>
+    <g transform="translate(20 22)">
+      <text font-size="10" fill="#54688a" letter-spacing="2">SLO</text>
+      <text y="22" font-size="11" fill="#cfd6e4">MTTD &lt; 1 m  ·  MTTR &lt; 4 h  ·  escalation &lt; 15 m  ·  postmortem within 72 h</text>
+    </g>
+    <g transform="translate(540 22)">
+      <text font-size="10" fill="#54688a" letter-spacing="2">PRINCIPLES</text>
+      <text y="22" font-size="11" fill="#5cf2c1">contain before clean  ·  every alert ships its own runbook  ·  document the FP that almost fooled you</text>
+    </g>
+  </g>
+
+  <!-- bottom right tag -->
+  <text x="1140" y="368" text-anchor="end" font-family="ui-monospace, monospace" font-size="11" fill="#54688a" letter-spacing="2">runbook · alert → triage → contain → eradicate → recover → review</text>
+</svg>

@@ -1,0 +1,464 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Kill-chain detection telemetry — 6 stages, live SOC terminal" font-family="ui-monospace,Menlo,Consolas,monospace">
+  <title>Kill-chain detection telemetry — every stage caught, in 30 seconds</title>
+  <desc>Animated SVG. Six-stage adversary kill-chain across the top. Each stage lights up red as a technique is observed, then turns blue when the matching detection rule fires. The bottom half is a live SOC terminal scrolling matched alerts in real time. Loops every 30 seconds.</desc>
+
+  <defs>
+    <linearGradient id="kc-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a0e14"/>
+      <stop offset="1" stop-color="#070a10"/>
+    </linearGradient>
+    <linearGradient id="kc-card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f141c"/>
+      <stop offset="1" stop-color="#0b1018"/>
+    </linearGradient>
+    <linearGradient id="kc-trace" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#1d2530" stop-opacity="0"/>
+      <stop offset=".15" stop-color="#1d2530" stop-opacity="1"/>
+      <stop offset=".85" stop-color="#1d2530" stop-opacity="1"/>
+      <stop offset="1"   stop-color="#1d2530" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="kc-glow-red" cx=".5" cy=".5" r=".5">
+      <stop offset="0"   stop-color="#ff6b8b" stop-opacity=".55"/>
+      <stop offset=".7"  stop-color="#ff6b8b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="kc-glow-blue" cx=".5" cy=".5" r=".5">
+      <stop offset="0"   stop-color="#5cf2c1" stop-opacity=".55"/>
+      <stop offset=".7"  stop-color="#5cf2c1" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="kc-soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+
+    <pattern id="kc-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#10161f" stroke-width="1"/>
+    </pattern>
+
+    <symbol id="kc-stage" overflow="visible">
+      <rect x="-78" y="-44" width="156" height="88" rx="10"
+            fill="url(#kc-card)" stroke="#1f2937"/>
+      <line x1="-78" y1="-22" x2="78" y2="-22" stroke="#1f2937"/>
+    </symbol>
+
+    <!-- shared blink for "live" dots -->
+    <symbol id="kc-live" overflow="visible">
+      <circle r="3.5" fill="#ff6b8b">
+        <animate attributeName="opacity" values="1;.25;1" dur="1.2s" repeatCount="indefinite"/>
+      </circle>
+    </symbol>
+  </defs>
+
+  <!-- ── canvas ─────────────────────────────────────────────────── -->
+  <rect width="1200" height="600" fill="url(#kc-bg)"/>
+  <rect width="1200" height="600" fill="url(#kc-grid)" opacity=".55"/>
+
+  <!-- subtle scanline -->
+  <rect x="0" y="0" width="1200" height="2" fill="#5cf2c1" opacity=".07">
+    <animate attributeName="y" values="-4;604;-4" dur="9s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ── header ────────────────────────────────────────────────── -->
+  <g transform="translate(40 40)">
+    <text x="0" y="0" fill="#5cf2c1" font-size="13" font-weight="700" letter-spacing=".18em">YZ-SOC // KILL-CHAIN TELEMETRY</text>
+    <text x="0" y="22" fill="#7a8694" font-size="11">recon → initial-access → foothold → priv-esc → lateral → loot · MTTD 30s baseline · live</text>
+
+    <g transform="translate(1120 0)">
+      <use href="#kc-live" x="-110"/>
+      <text x="-100" y="4" fill="#ff6b8b" font-size="11" letter-spacing=".1em">LIVE</text>
+      <rect x="-40" y="-10" width="80" height="20" rx="10" fill="none" stroke="#1f2937"/>
+      <text x="0" y="4" fill="#cdd6e3" font-size="10" text-anchor="middle">T+<tspan id="kc-clock"><animate attributeName="textContent" values="00s;05s;10s;15s;20s;25s;30s;00s" dur="30s" repeatCount="indefinite"/></tspan></text>
+    </g>
+  </g>
+
+  <!-- ── kill-chain rail ─────────────────────────────────────────── -->
+  <g transform="translate(0 130)">
+    <!-- trace wire -->
+    <rect x="80" y="44" width="1040" height="2" fill="url(#kc-trace)"/>
+    <!-- moving electron pulse on the trace -->
+    <circle r="3" fill="#79e2ff">
+      <animate attributeName="cx" values="100;1100;100" dur="30s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="45;45" dur="30s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="30s" keyTimes="0;.05;.95;1" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- stages — 6 evenly spaced -->
+    <!-- stage 1: recon -->
+    <g transform="translate(180 45)">
+      <use href="#kc-stage"/>
+      <text x="-72" y="-26" fill="#7a8694" font-size="9" letter-spacing=".15em">01 · RECON</text>
+      <text x="-72" y="-7" fill="#cdd6e3" font-size="11" font-weight="600">passive enum</text>
+      <text x="-72" y="14" fill="#9ca7b6" font-size="10">T1595 · scan</text>
+      <text x="-72" y="32" fill="#9ca7b6" font-size="10">subdomain.live</text>
+
+      <!-- red glow when adversary touches stage -->
+      <circle r="60" fill="url(#kc-glow-red)" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.05;.10;.13" dur="30s" repeatCount="indefinite"/>
+      </circle>
+      <!-- blue glow when blue closes loop -->
+      <circle r="60" fill="url(#kc-glow-blue)" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.13;.18;.22" dur="30s" repeatCount="indefinite"/>
+      </circle>
+      <!-- status pill -->
+      <g transform="translate(-72 46)">
+        <rect width="60" height="14" rx="7" fill="#1f2937"/>
+        <text x="30" y="10" fill="#7a8694" font-size="9" text-anchor="middle">queued</text>
+        <set attributeName="opacity" to="0" begin="3.9s"/>
+        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur=".01s" begin="3.9s" fill="freeze"/>
+      </g>
+      <g transform="translate(-72 46)">
+        <rect width="60" height="14" rx="7" fill="#3b1622" stroke="#ff6b8b"/>
+        <text x="30" y="10" fill="#ff6b8b" font-size="9" text-anchor="middle">observed</text>
+        <set attributeName="opacity" to="0" begin="0s"/>
+        <set attributeName="opacity" to="1" begin="3.9s"/>
+        <set attributeName="opacity" to="0" begin="5.4s"/>
+      </g>
+      <g transform="translate(-72 46)">
+        <rect width="60" height="14" rx="7" fill="#0e2b22" stroke="#5cf2c1"/>
+        <text x="30" y="10" fill="#5cf2c1" font-size="9" text-anchor="middle">detected</text>
+        <set attributeName="opacity" to="0" begin="0s"/>
+        <set attributeName="opacity" to="1" begin="5.4s"/>
+      </g>
+    </g>
+
+    <!-- stage 2: initial access -->
+    <g transform="translate(360 45)">
+      <use href="#kc-stage"/>
+      <text x="-72" y="-26" fill="#7a8694" font-size="9" letter-spacing=".15em">02 · INITIAL ACCESS</text>
+      <text x="-72" y="-7" fill="#cdd6e3" font-size="11" font-weight="600">spear-phish</text>
+      <text x="-72" y="14" fill="#9ca7b6" font-size="10">T1566.001 · macro</text>
+      <text x="-72" y="32" fill="#9ca7b6" font-size="10">finance.xlsm</text>
+
+      <circle r="60" fill="url(#kc-glow-red)" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.18;.23;.27" dur="30s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="60" fill="url(#kc-glow-blue)" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.27;.32;.36" dur="30s" repeatCount="indefinite"/>
+      </circle>
+      <g transform="translate(-72 46)">
+        <rect width="60" height="14" rx="7" fill="#1f2937"/>
+        <text x="30" y="10" fill="#7a8694" font-size="9" text-anchor="middle">queued</text>
+        <set attributeName="opacity" to="0" begin="6.9s" fill="freeze"/>
+      </g>
+      <g transform="translate(-72 46)">
+        <rect width="60" height="14" rx="7" fill="#3b1622" stroke="#ff6b8b"/>
+        <text x="30" y="10" fill="#ff6b8b" font-size="9" text-anchor="middle">observed</text>
+        <set attributeName="opacity" to="0" begin="0s"/>
+        <set attributeName="opacity" to="1" begin="6.9s"/>
+        <set attributeName="opacity" to="0" begin="8.7s"/>
+      </g>
+      <g transform="translate(-72 46)">
+        <rect width="60" height="14" rx="7" fill="#0e2b22" stroke="#5cf2c1"/>
+        <text x="30" y="10" fill="#5cf2c1" font-size="9" text-anchor="middle">detected</text>
+        <set attributeName="opacity" to="0" begin="0s"/>
+        <set attributeName="opacity" to="1" begin="8.7s"/>
+      </g>
+    </g>
+
+    <!-- stage 3: foothold -->
+    <g transform="translate(540 45)">
+      <use href="#kc-stage"/>
+      <text x="-72" y="-26" fill="#7a8694" font-size="9" letter-spacing=".15em">03 · FOOTHOLD</text>
+      <text x="-72" y="-7" fill="#cdd6e3" font-size="11" font-weight="600">powershell drop</text>
+      <text x="-72" y="14" fill="#9ca7b6" font-size="10">T1059.001 · enc-cmd</text>
+      <text x="-72" y="32" fill="#9ca7b6" font-size="10">stager.ps1</text>
+
+      <circle r="60" fill="url(#kc-glow-red)" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.32;.37;.41" dur="30s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="60" fill="url(#kc-glow-blue)" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.41;.46;.5" dur="30s" repeatCount="indefinite"/>
+      </circle>
+      <g transform="translate(-72 46)">
+        <rect width="60" height="14" rx="7" fill="#1f2937"/>
+        <text x="30" y="10" fill="#7a8694" font-size="9" text-anchor="middle">queued</text>
+        <set attributeName="opacity" to="0" begin="9.9s" fill="freeze"/>
+      </g>
+      <g transform="translate(-72 46)">
+        <rect width="60" height="14" rx="7" fill="#3b1622" stroke="#ff6b8b"/>
+        <text x="30" y="10" fill="#ff6b8b" font-size="9" text-anchor="middle">observed</text>
+        <set attributeName="opacity" to="0" begin="0s"/>
+        <set attributeName="opacity" to="1" begin="9.9s"/>
+        <set attributeName="opacity" to="0" begin="12.3s"/>
+      </g>
+      <g transform="translate(-72 46)">
+        <rect width="60" height="14" rx="7" fill="#0e2b22" stroke="#5cf2c1"/>
+        <text x="30" y="10" fill="#5cf2c1" font-size="9" text-anchor="middle">detected</text>
+        <set attributeName="opacity" to="0" begin="0s"/>
+        <set attributeName="opacity" to="1" begin="12.3s"/>
+      </g>
+    </g>
+
+    <!-- stage 4: priv-esc -->
+    <g transform="translate(720 45)">
+      <use href="#kc-stage"/>
+      <text x="-72" y="-26" fill="#7a8694" font-size="9" letter-spacing=".15em">04 · PRIV-ESC</text>
+      <text x="-72" y="-7" fill="#cdd6e3" font-size="11" font-weight="600">uac bypass</text>
+      <text x="-72" y="14" fill="#9ca7b6" font-size="10">T1548.002 · fodhelp</text>
+      <text x="-72" y="32" fill="#9ca7b6" font-size="10">srv01.local</text>
+
+      <circle r="60" fill="url(#kc-glow-red)" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.46;.51;.55" dur="30s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="60" fill="url(#kc-glow-blue)" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.55;.60;.64" dur="30s" repeatCount="indefinite"/>
+      </circle>
+      <g transform="translate(-72 46)">
+        <rect width="60" height="14" rx="7" fill="#1f2937"/>
+        <text x="30" y="10" fill="#7a8694" font-size="9" text-anchor="middle">queued</text>
+        <set attributeName="opacity" to="0" begin="13.8s" fill="freeze"/>
+      </g>
+      <g transform="translate(-72 46)">
+        <rect width="60" height="14" rx="7" fill="#3b1622" stroke="#ff6b8b"/>
+        <text x="30" y="10" fill="#ff6b8b" font-size="9" text-anchor="middle">observed</text>
+        <set attributeName="opacity" to="0" begin="0s"/>
+        <set attributeName="opacity" to="1" begin="13.8s"/>
+        <set attributeName="opacity" to="0" begin="16.5s"/>
+      </g>
+      <g transform="translate(-72 46)">
+        <rect width="60" height="14" rx="7" fill="#0e2b22" stroke="#5cf2c1"/>
+        <text x="30" y="10" fill="#5cf2c1" font-size="9" text-anchor="middle">detected</text>
+        <set attributeName="opacity" to="0" begin="0s"/>
+        <set attributeName="opacity" to="1" begin="16.5s"/>
+      </g>
+    </g>
+
+    <!-- stage 5: lateral -->
+    <g transform="translate(900 45)">
+      <use href="#kc-stage"/>
+      <text x="-72" y="-26" fill="#7a8694" font-size="9" letter-spacing=".15em">05 · LATERAL</text>
+      <text x="-72" y="-7" fill="#cdd6e3" font-size="11" font-weight="600">lsass dump</text>
+      <text x="-72" y="14" fill="#9ca7b6" font-size="10">T1003.001 · comsvcs</text>
+      <text x="-72" y="32" fill="#9ca7b6" font-size="10">dc01.local</text>
+
+      <circle r="60" fill="url(#kc-glow-red)" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.6;.65;.69" dur="30s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="60" fill="url(#kc-glow-blue)" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.69;.74;.78" dur="30s" repeatCount="indefinite"/>
+      </circle>
+      <g transform="translate(-72 46)">
+        <rect width="60" height="14" rx="7" fill="#1f2937"/>
+        <text x="30" y="10" fill="#7a8694" font-size="9" text-anchor="middle">queued</text>
+        <set attributeName="opacity" to="0" begin="18s" fill="freeze"/>
+      </g>
+      <g transform="translate(-72 46)">
+        <rect width="60" height="14" rx="7" fill="#3b1622" stroke="#ff6b8b"/>
+        <text x="30" y="10" fill="#ff6b8b" font-size="9" text-anchor="middle">observed</text>
+        <set attributeName="opacity" to="0" begin="0s"/>
+        <set attributeName="opacity" to="1" begin="18s"/>
+        <set attributeName="opacity" to="0" begin="20.7s"/>
+      </g>
+      <g transform="translate(-72 46)">
+        <rect width="60" height="14" rx="7" fill="#0e2b22" stroke="#5cf2c1"/>
+        <text x="30" y="10" fill="#5cf2c1" font-size="9" text-anchor="middle">detected</text>
+        <set attributeName="opacity" to="0" begin="0s"/>
+        <set attributeName="opacity" to="1" begin="20.7s"/>
+      </g>
+    </g>
+
+    <!-- stage 6: loot -->
+    <g transform="translate(1080 45)">
+      <use href="#kc-stage"/>
+      <text x="-72" y="-26" fill="#7a8694" font-size="9" letter-spacing=".15em">06 · LOOT → BLUE</text>
+      <text x="-72" y="-7" fill="#cdd6e3" font-size="11" font-weight="600">dns exfil</text>
+      <text x="-72" y="14" fill="#9ca7b6" font-size="10">T1048.003 · txt-rec</text>
+      <text x="-72" y="32" fill="#9ca7b6" font-size="10">staged.zip</text>
+
+      <circle r="60" fill="url(#kc-glow-red)" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.74;.79;.83" dur="30s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="60" fill="url(#kc-glow-blue)" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.83;.88;.93" dur="30s" repeatCount="indefinite"/>
+      </circle>
+      <g transform="translate(-72 46)">
+        <rect width="60" height="14" rx="7" fill="#1f2937"/>
+        <text x="30" y="10" fill="#7a8694" font-size="9" text-anchor="middle">queued</text>
+        <set attributeName="opacity" to="0" begin="22.2s" fill="freeze"/>
+      </g>
+      <g transform="translate(-72 46)">
+        <rect width="60" height="14" rx="7" fill="#3b1622" stroke="#ff6b8b"/>
+        <text x="30" y="10" fill="#ff6b8b" font-size="9" text-anchor="middle">observed</text>
+        <set attributeName="opacity" to="0" begin="0s"/>
+        <set attributeName="opacity" to="1" begin="22.2s"/>
+        <set attributeName="opacity" to="0" begin="24.9s"/>
+      </g>
+      <g transform="translate(-72 46)">
+        <rect width="60" height="14" rx="7" fill="#0e2b22" stroke="#5cf2c1"/>
+        <text x="30" y="10" fill="#5cf2c1" font-size="9" text-anchor="middle">contained</text>
+        <set attributeName="opacity" to="0" begin="0s"/>
+        <set attributeName="opacity" to="1" begin="24.9s"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- ── terminal ───────────────────────────────────────────────── -->
+  <g transform="translate(40 280)">
+    <rect width="1120" height="290" rx="10" fill="url(#kc-card)" stroke="#1f2937"/>
+
+    <!-- terminal chrome -->
+    <g transform="translate(16 16)">
+      <circle r="5" cx="0"  cy="0" fill="#ff6b8b"/>
+      <circle r="5" cx="16" cy="0" fill="#ffb86b"/>
+      <circle r="5" cx="32" cy="0" fill="#5cf2c1"/>
+      <text x="60" y="4" fill="#7a8694" font-size="11">soc-ops@yz-lab:~ $ tail -f /var/log/wazuh/alerts.json | jq -r .rule.description</text>
+    </g>
+    <line x1="0" y1="38" x2="1120" y2="38" stroke="#1f2937"/>
+
+    <!-- log content — clipped + scrolled -->
+    <clipPath id="kc-clip">
+      <rect x="0" y="40" width="1120" height="240"/>
+    </clipPath>
+    <g clip-path="url(#kc-clip)">
+      <g transform="translate(20 60)">
+        <!-- whole stack of lines slides up across 30s; we list ~30 lines so scroll never empties -->
+        <g>
+          <animateTransform attributeName="transform" type="translate"
+            values="0,260; 0,-360"
+            keyTimes="0;1" dur="30s" repeatCount="indefinite"/>
+
+          <!-- T+0..3s recon -->
+          <g transform="translate(0 0)">
+            <text fill="#7a8694" font-size="11">[t+00.4s]</text>
+            <text fill="#9ca7b6" font-size="11" x="68">recon · port-scan · 5022 packets / 90s · src 198.51.100.74</text>
+          </g>
+          <g transform="translate(0 18)">
+            <text fill="#7a8694" font-size="11">[t+01.1s]</text>
+            <text fill="#9ca7b6" font-size="11" x="68">recon · subdomain enumeration · *.yz-lab.local · pdns hits +14</text>
+          </g>
+          <g transform="translate(0 36)">
+            <text fill="#5cf2c1" font-size="11">[t+02.7s]</text>
+            <text fill="#cdd6e3" font-size="11" x="68">SIGMA  · T1595 · perimeter scan · sid:158123 · level:high · src=198.51.100.74</text>
+          </g>
+          <g transform="translate(0 54)">
+            <text fill="#5cf2c1" font-size="11">[t+03.0s]</text>
+            <text fill="#cdd6e3" font-size="11" x="68">WAZUH  · rule 158123 fired · alert closed · MTTD=2.6s</text>
+          </g>
+
+          <!-- 4..7s phish -->
+          <g transform="translate(0 90)">
+            <text fill="#7a8694" font-size="11">[t+04.2s]</text>
+            <text fill="#9ca7b6" font-size="11" x="68">mail · attachment · finance_q4.xlsm · macros enabled · sender external</text>
+          </g>
+          <g transform="translate(0 108)">
+            <text fill="#7a8694" font-size="11">[t+05.0s]</text>
+            <text fill="#9ca7b6" font-size="11" x="68">edr  · word.exe → wscript.exe spawn · suspicious chain</text>
+          </g>
+          <g transform="translate(0 126)">
+            <text fill="#5cf2c1" font-size="11">[t+05.9s]</text>
+            <text fill="#cdd6e3" font-size="11" x="68">SIGMA  · T1566.001 · spearphish-attachment · sid:158218 · level:critical</text>
+          </g>
+          <g transform="translate(0 144)">
+            <text fill="#5cf2c1" font-size="11">[t+06.4s]</text>
+            <text fill="#cdd6e3" font-size="11" x="68">WAZUH  · rule 158218 fired · auto-quarantine · misp tag: malspam-2025</text>
+          </g>
+
+          <!-- 8..11s foothold -->
+          <g transform="translate(0 180)">
+            <text fill="#7a8694" font-size="11">[t+07.3s]</text>
+            <text fill="#9ca7b6" font-size="11" x="68">sysmon · powershell.exe -nop -w hidden -enc SQB...EwA== · pid 4812</text>
+          </g>
+          <g transform="translate(0 198)">
+            <text fill="#7a8694" font-size="11">[t+08.0s]</text>
+            <text fill="#9ca7b6" font-size="11" x="68">sysmon · process · stager.ps1 · parent:winword.exe · cmdline len 4732</text>
+          </g>
+          <g transform="translate(0 216)">
+            <text fill="#5cf2c1" font-size="11">[t+09.6s]</text>
+            <text fill="#cdd6e3" font-size="11" x="68">SIGMA  · T1059.001 · powershell-encoded · sid:158304 · level:high</text>
+          </g>
+          <g transform="translate(0 234)">
+            <text fill="#5cf2c1" font-size="11">[t+09.9s]</text>
+            <text fill="#cdd6e3" font-size="11" x="68">WAZUH  · rule 158304 · isolated host workstation-07 · MTTR=4.6s</text>
+          </g>
+
+          <!-- 12..15s priv-esc -->
+          <g transform="translate(0 270)">
+            <text fill="#7a8694" font-size="11">[t+11.2s]</text>
+            <text fill="#9ca7b6" font-size="11" x="68">sysmon · fodhelper.exe → cmd.exe (medium → high) on srv01.local</text>
+          </g>
+          <g transform="translate(0 288)">
+            <text fill="#7a8694" font-size="11">[t+12.0s]</text>
+            <text fill="#9ca7b6" font-size="11" x="68">registry · HKCU\Software\Classes\ms-settings\shell\open\command set</text>
+          </g>
+          <g transform="translate(0 306)">
+            <text fill="#5cf2c1" font-size="11">[t+13.5s]</text>
+            <text fill="#cdd6e3" font-size="11" x="68">SIGMA  · T1548.002 · uac-bypass-fodhelper · sid:158412 · level:high</text>
+          </g>
+          <g transform="translate(0 324)">
+            <text fill="#5cf2c1" font-size="11">[t+13.9s]</text>
+            <text fill="#cdd6e3" font-size="11" x="68">WAZUH  · rule 158412 · token-revoke fired · ad-team paged</text>
+          </g>
+
+          <!-- 16..19s lateral -->
+          <g transform="translate(0 360)">
+            <text fill="#7a8694" font-size="11">[t+15.6s]</text>
+            <text fill="#9ca7b6" font-size="11" x="68">sysmon · rundll32.exe comsvcs.dll, MiniDump 624 lsass.dmp full · pid 6712</text>
+          </g>
+          <g transform="translate(0 378)">
+            <text fill="#7a8694" font-size="11">[t+16.4s]</text>
+            <text fill="#9ca7b6" font-size="11" x="68">edr  · handle to lsass.exe · OBJECT_TYPE=Process · access=0x1010</text>
+          </g>
+          <g transform="translate(0 396)">
+            <text fill="#ff6b8b" font-size="11">[t+18.1s]</text>
+            <text fill="#cdd6e3" font-size="11" x="68">SIGMA  · T1003.001 · lsass-dump-via-comsvcs · sid:158818 · level:critical</text>
+          </g>
+          <g transform="translate(0 414)">
+            <text fill="#5cf2c1" font-size="11">[t+18.7s]</text>
+            <text fill="#cdd6e3" font-size="11" x="68">WAZUH  · rule 158818 · purple-closure · atomic-test-T1003.001 verified</text>
+          </g>
+
+          <!-- 20..27s loot/exfil -->
+          <g transform="translate(0 450)">
+            <text fill="#7a8694" font-size="11">[t+20.4s]</text>
+            <text fill="#9ca7b6" font-size="11" x="68">dns · txt query · zip-pack-01.abuseintel.example.tld · 4.2 KB / s</text>
+          </g>
+          <g transform="translate(0 468)">
+            <text fill="#7a8694" font-size="11">[t+21.7s]</text>
+            <text fill="#9ca7b6" font-size="11" x="68">dns · txt query · zip-pack-02.abuseintel.example.tld · entropy 7.91</text>
+          </g>
+          <g transform="translate(0 486)">
+            <text fill="#ff6b8b" font-size="11">[t+22.5s]</text>
+            <text fill="#cdd6e3" font-size="11" x="68">SIGMA  · T1048.003 · dns-exfil · sid:158904 · level:critical · score 9.7/10</text>
+          </g>
+          <g transform="translate(0 504)">
+            <text fill="#5cf2c1" font-size="11">[t+24.6s]</text>
+            <text fill="#cdd6e3" font-size="11" x="68">FORTI  · sinkhole · *.abuseintel.example.tld · 0.0.0.0 · ttl 60s</text>
+          </g>
+          <g transform="translate(0 522)">
+            <text fill="#5cf2c1" font-size="11">[t+24.9s]</text>
+            <text fill="#cdd6e3" font-size="11" x="68">WAZUH  · rule 158904 · contained · misp event #41ba76 published</text>
+          </g>
+
+          <!-- summary -->
+          <g transform="translate(0 558)">
+            <text fill="#79e2ff" font-size="11">[t+27.0s]</text>
+            <text fill="#cdd6e3" font-size="11" x="68">SUMMARY · 6/6 stages caught · MTTD median 1.7s · MTTR median 0.6s</text>
+          </g>
+          <g transform="translate(0 576)">
+            <text fill="#79e2ff" font-size="11">[t+27.3s]</text>
+            <text fill="#cdd6e3" font-size="11" x="68">PURPLE · atomic-red-team rerun queued · expected window: +24h</text>
+          </g>
+          <g transform="translate(0 594)">
+            <text fill="#79e2ff" font-size="11">[t+27.6s]</text>
+            <text fill="#cdd6e3" font-size="11" x="68">QUEUE  · 0 alerts open · 0 manual triage pending · channel #soc green</text>
+          </g>
+          <g transform="translate(0 612)">
+            <text fill="#7a8694" font-size="11">[t+28.0s]</text>
+            <text fill="#9ca7b6" font-size="11" x="68">— wait for next adversary —</text>
+          </g>
+          <g transform="translate(0 630)">
+            <text fill="#7a8694" font-size="11">[t+30.0s]</text>
+            <text fill="#9ca7b6" font-size="11" x="68">soc-ops@yz-lab:~ $ █</text>
+          </g>
+        </g>
+      </g>
+    </g>
+
+    <!-- footer status bar -->
+    <g transform="translate(20 264)">
+      <rect width="1080" height="14" rx="7" fill="#0a0e14" stroke="#1f2937"/>
+      <circle r="3" cx="14" cy="7">
+        <animate attributeName="fill" values="#5cf2c1;#79e2ff;#5cf2c1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="26" y="11" fill="#7a8694" font-size="9">eps 12 437 · queue 0 · sigma rules 14 · wazuh rules 6213 · suricata sids 14 029 · misp iocs 142 · purple loop +24h</text>
+    </g>
+  </g>
+</svg>
