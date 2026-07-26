@@ -1,6 +1,6 @@
 [![Yassir Zahidi — cybersecurity engineering student · Morocco · blue · red · purple](banner.svg)](https://y-zahidi.github.io)
 
-[![portfolio](https://img.shields.io/badge/portfolio-y--zahidi.github.io-5cf2c1?style=flat-square&labelColor=04070d)](https://y-zahidi.github.io) [![home-lab-siem](https://img.shields.io/badge/home--lab--siem-design_overview-79e2ff?style=flat-square&labelColor=04070d)](https://github.com/y-zahidi/home-lab-siem) [![linkedin](https://img.shields.io/badge/linkedin-yassir--zahidi-79e2ff?style=flat-square&labelColor=04070d)](https://www.linkedin.com/in/yassir-zahidi/) [![mail](https://img.shields.io/badge/mail-yassirzahidi8%40gmail.com-cfd6e4?style=flat-square&labelColor=04070d)](mailto:yassirzahidi8@gmail.com) [![open](https://img.shields.io/badge/available-open-5cf2c1?style=flat-square&labelColor=04070d)](https://y-zahidi.github.io) [![location](https://img.shields.io/badge/morocco-eu_remote-79e2ff?style=flat-square&labelColor=04070d)](https://y-zahidi.github.io)
+[![portfolio](https://img.shields.io/badge/portfolio-y--zahidi.github.io-5cf2c1?style=flat-square&labelColor=04070d)](https://y-zahidi.github.io) [![deceptr-unified](https://img.shields.io/badge/deceptr--unified-design_showcase-79e2ff?style=flat-square&labelColor=04070d)](https://github.com/y-zahidi/DECEPTR-UNIFIED) [![home-lab-siem](https://img.shields.io/badge/home--lab--siem-design_overview-79e2ff?style=flat-square&labelColor=04070d)](https://github.com/y-zahidi/home-lab-siem) [![linkedin](https://img.shields.io/badge/linkedin-yassir--zahidi-79e2ff?style=flat-square&labelColor=04070d)](https://www.linkedin.com/in/yassir-zahidi/) [![mail](https://img.shields.io/badge/mail-yassirzahidi8%40gmail.com-cfd6e4?style=flat-square&labelColor=04070d)](mailto:yassirzahidi8@gmail.com) [![open](https://img.shields.io/badge/available-open-5cf2c1?style=flat-square&labelColor=04070d)](https://y-zahidi.github.io) [![location](https://img.shields.io/badge/morocco-eu_remote-79e2ff?style=flat-square&labelColor=04070d)](https://y-zahidi.github.io)
 
 # Yassir Zahidi
 
@@ -15,22 +15,36 @@
 ### `// table of contents`
 
 ```
-01  the-lab            home-lab-siem · architecture · proof
-02  detections         triple-syntax sample · coverage matrix · playbook
-03  activity           real contribution graph · shift simulation · uptime
-04  history            préfecture de tétouan · alten · projects
-05  toolchain          stack heatmap · certifications · principles
-06  reach              four channels, async-first
+01  the-platform    deceptr-unified · cyberdeception · dfir · attack-sim
+02  the-lab            home-lab-siem · architecture · proof
+03  detections         triple-syntax sample · coverage matrix · playbook
+04  activity           real contribution graph · shift simulation · uptime
+05  history            préfecture de tétouan · alten · projects
+06  toolchain          stack heatmap · certifications · principles
+07  reach              four channels, async-first
 ```
 
 ---
 
-## 01 · the lab — [`home-lab-siem`](https://github.com/y-zahidi/home-lab-siem)
+## 01 · the platform — [`DECEPTR-UNIFIED`](https://github.com/y-zahidi/DECEPTR-UNIFIED)
+
+Unified cyberdeception, DFIR, CTI correlation, and attack-simulation platform design and architecture overview. A working framework combining:
+- **Cyberdeception**: Decoy honeypots (Cowrie, Dionaea, Web portal), active canary tokens, AD/LDAP decoys, fake credentials, and automatic escalation response.
+- **DFIR**: Forensic collection using Velociraptor offline collectors and custom forensic reporting modules.
+- **Attack Simulation**: Automated validations mapping techniques against Atomic Red Team and CALDERA plans.
+- **CTI Correlation**: Unified OpenCTI indicators ingest for threat assessment mapping.
+
+The stack architecture is mapped out below, demonstrating the end-to-end integration and sync flow:
+
+[![DECEPTR Unified Architecture](https://raw.githubusercontent.com/y-zahidi/DECEPTR-UNIFIED/main/docs/architecture-overview.png)](https://github.com/y-zahidi/DECEPTR-UNIFIED)
+
+---
+
+## 02 · the lab — [`home-lab-siem`](https://github.com/y-zahidi/home-lab-siem)
 
 Design and architecture overview of a reproducible SOC-grade segment. **Wazuh + Suricata + Sysmon + MISP + VirusTotal** behind a **FortiGate**, validated weekly with **Nessus** and beaten on regularly with **atomic-red-team**. The architecture mirrors what i helped deploy at the **Préfecture de Tétouan (SSIC, Ministère de l'Intérieur)** in May 2024.
 
 I built the lab to learn defense end-to-end. Then i started attacking it on purpose to learn offense end-to-end. The two columns of this page are the same project design, just from opposite sides of the firewall.
-
 
 ### `play /soc/killchain.mov`
 
@@ -76,7 +90,7 @@ flowchart LR
 
 ---
 
-## 02 · detections
+## 03 · detections
 
 ### `sample.{xml,yml,rules}` — three syntaxes, one threat
 
@@ -147,7 +161,7 @@ alert tls $HOME_NET any -> $EXTERNAL_NET any (
 
 ---
 
-## 03 · activity
+## 04 · activity
 
 ### real contribution graph
 
@@ -175,7 +189,7 @@ Seven days of synthetic uptime per component, last 50 alerts feed.
 
 ---
 
-## 04 · history
+## 05 · history
 
 **Préfecture de Tétouan — Ministère de l'Intérieur (SSIC) · *Cybersecurity Intern · 02 May → 31 May 2024***
 
@@ -206,7 +220,7 @@ Also: [HTMLCamp](https://github.com/y-zahidi/HTMLCamp) · [Rabat-Cultural-Websit
 
 ---
 
-## 05 · toolchain
+## 06 · toolchain
 
 [![Stack heatmap — fluency by domain (detection, threat-intel, perimeter, offensive, OS/identity, languages, infra)](assets/stack.svg)](assets/stack.svg)
 
@@ -235,7 +249,7 @@ Also: [HTMLCamp](https://github.com/y-zahidi/HTMLCamp) · [Rabat-Cultural-Websit
 
 ---
 
-## 06 · reach
+## 07 · reach
 
 Four channels. First reply within 24 h, async-first, time zone Africa/Casablanca.
 
