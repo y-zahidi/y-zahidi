@@ -36,7 +36,7 @@ Unified cyberdeception, DFIR, CTI correlation, and attack-simulation platform de
 
 The stack architecture is mapped out below, demonstrating the end-to-end integration and sync flow:
 
-[![DECEPTR Unified Architecture](https://raw.githubusercontent.com/y-zahidi/DECEPTR-UNIFIED/main/docs/architecture-overview.png)](https://github.com/y-zahidi/DECEPTR-UNIFIED)
+[![DECEPTR Unified Architecture](https://github.com/y-zahidi/DECEPTR-UNIFIED)
 
 ---
 
