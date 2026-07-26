@@ -1,10 +1,10 @@
-[![Yassir Zahidi — cybersecurity engineering student · Morocco · blue · red · purple](banner.svg)](https://y-zahidi.github.io)
+[![Yassir Zahidi — cybersecurity engineer · Morocco · blue · red · purple](banner.svg)](https://y-zahidi.github.io)
 
-[![portfolio](https://img.shields.io/badge/portfolio-y--zahidi.github.io-5cf2c1?style=flat-square&labelColor=04070d)](https://y-zahidi.github.io) [![home-lab-siem](https://img.shields.io/badge/home--lab--siem-docker_compose_up-79e2ff?style=flat-square&labelColor=04070d)](https://github.com/y-zahidi/home-lab-siem) [![linkedin](https://img.shields.io/badge/linkedin-yassir--zahidi-79e2ff?style=flat-square&labelColor=04070d)](https://www.linkedin.com/in/yassir-zahidi/) [![mail](https://img.shields.io/badge/mail-yassirzahidi8%40gmail.com-cfd6e4?style=flat-square&labelColor=04070d)](mailto:yassirzahidi8@gmail.com) [![open](https://img.shields.io/badge/available-open-5cf2c1?style=flat-square&labelColor=04070d)](https://y-zahidi.github.io) [![location](https://img.shields.io/badge/morocco-eu_remote-79e2ff?style=flat-square&labelColor=04070d)](https://y-zahidi.github.io)
+[![portfolio](https://img.shields.io/badge/portfolio-y--zahidi.github.io-5cf2c1?style=flat-square&labelColor=04070d)](https://y-zahidi.github.io) [![home-lab-siem](https://img.shields.io/badge/home--lab--siem-design_overview-79e2ff?style=flat-square&labelColor=04070d)](https://github.com/y-zahidi/home-lab-siem) [![linkedin](https://img.shields.io/badge/linkedin-yassir--zahidi-79e2ff?style=flat-square&labelColor=04070d)](https://www.linkedin.com/in/yassir-zahidi/) [![mail](https://img.shields.io/badge/mail-yassirzahidi8%40gmail.com-cfd6e4?style=flat-square&labelColor=04070d)](mailto:yassirzahidi8@gmail.com) [![open](https://img.shields.io/badge/available-open-5cf2c1?style=flat-square&labelColor=04070d)](https://y-zahidi.github.io) [![location](https://img.shields.io/badge/morocco-eu_remote-79e2ff?style=flat-square&labelColor=04070d)](https://y-zahidi.github.io)
 
 # Yassir Zahidi
 
-*cybersecurity engineering student · i build a soc-grade lab on my own time, then i attack it on purpose so it gets better.*
+*cybersecurity engineer · i design and build soc-grade labs, analyzing defense and attack simulations to improve rulesets.*
 
 [![Three discipline cards — BLUE (defense — Wazuh, Suricata, Sysmon, MISP), RED (offense — nmap, BloodHound, Burp, Metasploit), PURPLE (validation loop — atomic-red-team, sigma, caldera)](assets/cardstack.svg)](assets/cardstack.svg)
 
@@ -27,9 +27,10 @@
 
 ## 01 · the lab — [`home-lab-siem`](https://github.com/y-zahidi/home-lab-siem)
 
-A reproducible SOC-grade segment i run for myself. **Wazuh + Suricata + Sysmon + MISP + VirusTotal** behind a **FortiGate**, validated weekly with **Nessus** and beaten on regularly with **atomic-red-team**. The architecture mirrors what i helped deploy at the **Préfecture de Tétouan (SSIC, Ministère de l'Intérieur)** in May 2024 — repackaged so anyone can `docker compose up`.
+Design and architecture overview of a reproducible SOC-grade segment. **Wazuh + Suricata + Sysmon + MISP + VirusTotal** behind a **FortiGate**, validated weekly with **Nessus** and beaten on regularly with **atomic-red-team**. The architecture mirrors what i helped deploy at the **Préfecture de Tétouan (SSIC, Ministère de l'Intérieur)** in May 2024.
 
-I built the lab to learn defense end-to-end. Then i started attacking it on purpose to learn offense end-to-end. The two columns of this page are the same project, just from opposite sides of the firewall.
+I built the lab to learn defense end-to-end. Then i started attacking it on purpose to learn offense end-to-end. The two columns of this page are the same project design, just from opposite sides of the firewall.
+
 
 ### `play /soc/killchain.mov`
 
@@ -182,7 +183,7 @@ Seven days of synthetic uptime per component, last 50 alerts feed.
 - Wrote **custom Wazuh decoders** for FortiGate syslog so we'd stop losing fields on rotation; mapped Suricata EVE alerts to MITRE ATT&CK in the alert pipeline.
 - Wired MISP **CIRCL + abuse.ch** feeds on a 6-hour sync, plumbed VirusTotal hashing for any Sysmon `EventID=1` with a non-signed binary parent.
 - Weekly **Nessus** scans against the perimeter, triage report to the SSIC chief.
-- The architecture, repackaged so anyone can `docker compose up`, lives at [`home-lab-siem`](https://github.com/y-zahidi/home-lab-siem).
+- The architecture design lives at [`home-lab-siem`](https://github.com/y-zahidi/home-lab-siem).
 
 **ALTEN Maroc — Tétouan Shore · *IT Support Technician (N1/N2) · Mar 2025 → Sep 2025***
 
@@ -194,7 +195,8 @@ Seven days of synthetic uptime per component, last 50 alerts feed.
 
 | project | stack | what it actually does |
 |---|---|---|
-| **[home-lab-siem](https://github.com/y-zahidi/home-lab-siem)** | Wazuh · Suricata · Sysmon · MISP · Docker | the internship architecture, packaged. `docker compose up` and the SOC is live. |
+| **[DECEPTR-UNIFIED](https://github.com/y-zahidi/DECEPTR-UNIFIED)** | FastAPI · OpenCTI · Elasticsearch · Python | unified cyberdeception, DFIR, attack simulation and threat intelligence platform architecture and configuration snapshots. |
+| **[home-lab-siem](https://github.com/y-zahidi/home-lab-siem)** | Wazuh · Suricata · Sysmon · MISP · Docker | the internship architecture design, components layout, and security alerts tuning. |
 | **[ctf-writeups](https://github.com/y-zahidi/ctf-writeups)** | Markdown | TryHackMe / HTB walkthroughs — methodology over flags, one consistent template. |
 | **[pentest-cheatsheet](https://github.com/y-zahidi/pentest-cheatsheet)** | Markdown | the cheatsheet i actually use — recon → AD → web → post-ex. |
 | **[water-stress-morocco-analytics](https://github.com/y-zahidi/water-stress-morocco-analytics)** | MySQL · QlikView · star schema | DWH on water stress in Morocco — 68k rows, 12 regions, 2015–2025. |
