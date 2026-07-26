@@ -1,10 +1,10 @@
-[![Yassir Zahidi — cybersecurity engineer · Morocco · blue · red · purple](banner.svg)](https://y-zahidi.github.io)
+[![Yassir Zahidi — cybersecurity engineering student · Morocco · blue · red · purple](banner.svg)](https://y-zahidi.github.io)
 
 [![portfolio](https://img.shields.io/badge/portfolio-y--zahidi.github.io-5cf2c1?style=flat-square&labelColor=04070d)](https://y-zahidi.github.io) [![home-lab-siem](https://img.shields.io/badge/home--lab--siem-design_overview-79e2ff?style=flat-square&labelColor=04070d)](https://github.com/y-zahidi/home-lab-siem) [![linkedin](https://img.shields.io/badge/linkedin-yassir--zahidi-79e2ff?style=flat-square&labelColor=04070d)](https://www.linkedin.com/in/yassir-zahidi/) [![mail](https://img.shields.io/badge/mail-yassirzahidi8%40gmail.com-cfd6e4?style=flat-square&labelColor=04070d)](mailto:yassirzahidi8@gmail.com) [![open](https://img.shields.io/badge/available-open-5cf2c1?style=flat-square&labelColor=04070d)](https://y-zahidi.github.io) [![location](https://img.shields.io/badge/morocco-eu_remote-79e2ff?style=flat-square&labelColor=04070d)](https://y-zahidi.github.io)
 
 # Yassir Zahidi
 
-*cybersecurity engineer · i design and build soc-grade labs, analyzing defense and attack simulations to improve rulesets.*
+*cybersecurity engineering student · i build a soc-grade lab on my own time, then i attack it on purpose so it gets better.*
 
 [![Three discipline cards — BLUE (defense — Wazuh, Suricata, Sysmon, MISP), RED (offense — nmap, BloodHound, Burp, Metasploit), PURPLE (validation loop — atomic-red-team, sigma, caldera)](assets/cardstack.svg)](assets/cardstack.svg)
 
