@@ -1,106 +1,100 @@
-[![Signal / Validate / Harden — adversary-informed security engineering](assets/security-engineering-hero.png)](https://y-zahidi.github.io)
+[![Signal Atlas — adversary-informed security engineering](assets/signal-atlas-hero.jpg)](https://y-zahidi.github.io)
 
 # Yassir Zahidi
 
-**Adversary-informed security builder · Morocco · Detection engineering, cyberdeception, DFIR, and authorized security testing.**
+**Security engineering student building and validating systems for detection, forensics, deception, and hardening.**
 
-I design defensive systems, validate them through controlled attack paths, and turn every finding into a stronger detection, control, triage decision, or hardening action.
+I turn observed behavior into stronger signals, better decisions, and controls that can be tested again.
 
-[Portfolio](https://y-zahidi.github.io) · [LinkedIn](https://www.linkedin.com/in/yassir-zahidi/) · [GitHub](https://github.com/y-zahidi) · [Contact](mailto:yassirzahidi8@gmail.com) · [Résumé](https://y-zahidi.github.io/resume.json)
+[Portfolio](https://y-zahidi.github.io) · [LinkedIn](https://www.linkedin.com/in/yassir-zahidi/) · [Résumé](https://y-zahidi.github.io/resume.json) · [Email](mailto:yassirzahidi8@gmail.com)
 
 > **Signal. Validate. Harden. Repeat.**
 
 ---
 
-## The validation loop
+## Operating thesis
 
-| **Signal** | **Validate** | **Harden** |
-|:--|:--|:--|
-| Build telemetry, detections, and defensive visibility. | Emulate realistic techniques in authorized labs and controlled environments. | Tune rules, controls, and response paths—then test the improvement again. |
+A security control is only useful when it produces evidence, supports a decision, and survives revalidation. My work connects controlled scenarios with telemetry, forensic context, detection logic, triage, and hardening actions.
 
-My work sits at the point where offensive understanding improves defensive engineering. I focus on **what an attack should look like in telemetry, how a control should respond, and how to prove that the result is better.**
+![Validation loop: instrument, model, validate, observe, decide, harden](assets/diagrams/validation-loop.png)
 
-![Validation loop: Instrument, Model, Validate, Observe, Decide, Harden](assets/diagrams/validation-loop.png)
+## Portfolio atlas
 
-### Portfolio map
+This profile is a curated index of private personal implementations. Public repositories show architecture, reasoning, sanitized evidence, and engineering decisions without exposing complete source code or operational material.
 
-This visual index makes the structure of the portfolio easy to scan: security practice, flagship proof, and privacy-safe public evidence.
-
-![Portfolio mind map: security practice, flagships, and showcase](assets/diagrams/portfolio-mindmap.png)
+![Portfolio map: practice, flagship systems, and public evidence](assets/diagrams/portfolio-mindmap.png)
 
 ---
 
-## Selected case studies
+## Selected systems
 
 ### [DECEPTR-UNIFIED](https://github.com/y-zahidi/DECEPTR-UNIFIED)
 
-**Cyberdeception · DFIR · CTI correlation · attack simulation**
+**Cyberdeception · DFIR · CTI correlation · controlled validation**
 
-A unified security platform design that connects decoy interaction, forensic collection, threat-intelligence context, and controlled validation. The public repository presents the architecture, sanitized configuration patterns, and engineering decisions behind a private personal implementation.
+A unified platform design connecting decoy interaction, forensic collection, threat-intelligence context, and controlled validation. The public case file presents the architecture, trust boundaries, sanitized configuration patterns, and engineering decisions behind a private implementation.
 
-[Explore the project →](https://github.com/y-zahidi/DECEPTR-UNIFIED)
+[Open the DECEPTR case file →](https://github.com/y-zahidi/DECEPTR-UNIFIED)
 
 ### [home-lab-siem](https://github.com/y-zahidi/home-lab-siem)
 
 **Wazuh · Suricata · Sysmon · MISP · MITRE ATT&CK**
 
-A SOC-grade lab for detection engineering: telemetry is collected, attack paths are validated in a controlled environment, and resulting observations inform rules, triage, and hardening decisions.
+A reproducible telemetry and detection laboratory where controlled scenarios become evidence, evidence becomes context, and context informs triage and hardening.
 
-[Explore the project →](https://github.com/y-zahidi/home-lab-siem)
+[Open the SIEM case file →](https://github.com/y-zahidi/home-lab-siem)
 
-### [Authorized offensive learning](https://github.com/y-zahidi/ctf-writeups)
+### [Authorized security learning](https://github.com/y-zahidi/ctf-writeups)
 
 **CTF methodology · attack-path analysis · defensive takeaways**
 
-My offensive-security material is limited to CTFs, owned labs, and explicitly authorized environments. Every exercise is treated as a chance to understand observability gaps, detection opportunities, and defensive trade-offs.
+Owned labs, CTFs, and explicitly permitted environments are used to understand observability gaps, detection opportunities, and control trade-offs.
 
 [CTF write-ups →](https://github.com/y-zahidi/ctf-writeups) · [Pentest notes →](https://github.com/y-zahidi/pentest-cheatsheet)
 
 ---
 
-## What is public—and what remains private
-
-> **Portfolio showcase:** These repositories document architecture, selected sanitized configurations, validation evidence, and design decisions for private personal implementations. They intentionally exclude complete source code, operational secrets, and environment-specific deployment details.
+## Public evidence / private implementation
 
 | Public evidence | Kept private |
 |:--|:--|
 | Architecture and trust boundaries | Complete implementation source |
 | Sanitized configuration examples | Credentials, API keys, and infrastructure details |
-| MITRE-mapped validation scenarios | Privileged deployment automation |
-| Detection logic and defensive outcomes | Sensitive tuning and private datasets |
-| Redacted screenshots and engineering notes | Any third-party or employer-confidential material |
+| Mapped validation scenarios | Privileged deployment automation |
+| Detection logic and engineering outcomes | Sensitive tuning and private datasets |
+| Redacted screenshots and design notes | Third-party or employer-confidential material |
+
+Every public artifact is designed to be useful without pretending to be a complete open-source release.
 
 ---
 
-## Practice areas
+## Engineering lens
 
-| Blue | Red | Purple |
-|:--|:--|:--|
-| Telemetry engineering · detection logic · SIEM operations · incident triage | Authorized adversary emulation · CTF methodology · attack-path analysis | Detection validation · control tuning · deception · defensive feedback loops |
+| Focus | What I build and examine |
+|:--|:--|
+| **Visibility and detection** | Telemetry pipelines, correlation, alert quality, triage, and response context. |
+| **Adversary-informed validation** | Controlled scenarios, CTF methodology, attack-path analysis, and observability testing. |
+| **Control improvement** | Deception surfaces, revalidation loops, hardening actions, and measurable defensive outcomes. |
 
 ---
 
-## Selected engineering breadth
+## Broader engineering work
 
 | Project | Focus |
 |:--|:--|
 | [water-stress-morocco-analytics](https://github.com/y-zahidi/water-stress-morocco-analytics) | Data warehouse design, ETL, and regional analytics. |
-| [eduflow-lms](https://github.com/y-zahidi/eduflow-lms) | ASP.NET Core architecture, identity, dashboards, and testing showcase. |
+| [eduflow-lms](https://github.com/y-zahidi/eduflow-lms) | ASP.NET Core architecture, identity, dashboards, and testing. |
 | [FacturationPro-Enterprise](https://github.com/y-zahidi/FacturationPro-Enterprise) | Desktop business software, SQLite, multi-user workflows, and PDF generation. |
-
----
 
 ## Principles
 
 1. **Detection without telemetry is theatre.**
-2. **An authorized attack path is a test case for the defense.**
+2. **An authorized scenario is a test case for the control.**
 3. **Every alert needs context, a triage action, and a false-positive story.**
 4. **A control is not complete until it has been revalidated.**
 
----
-
 ## Connect
 
-I am a Cybersecurity and Computer Engineering student based in Morocco, building toward detection engineering, SOC, and authorized security-testing opportunities.
+I am based in Morocco and building toward security engineering opportunities focused on detection, forensics, controlled validation, and hardening.
 
 [Portfolio](https://y-zahidi.github.io) · [LinkedIn](https://www.linkedin.com/in/yassir-zahidi/) · [Email](mailto:yassirzahidi8@gmail.com) · [GitHub](https://github.com/y-zahidi)
