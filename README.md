@@ -16,13 +16,13 @@ I turn observed behavior into stronger signals, better decisions, and controls t
 
 A security control is only useful when it produces evidence, supports a decision, and survives revalidation. My work connects controlled scenarios with telemetry, forensic context, detection logic, triage, and hardening actions.
 
-![Validation loop: instrument, model, validate, observe, decide, harden](assets/diagrams/validation-loop.png)
+![Validation loop: instrument, model, validate, observe, decide, harden](assets/diagrams/validation-loop-transparent.png)
 
 ## Portfolio atlas
 
 This profile is a curated index of private personal implementations. Public repositories show architecture, reasoning, sanitized evidence, and engineering decisions without exposing complete source code or operational material.
 
-![Portfolio map: practice, flagship systems, and public evidence](assets/diagrams/portfolio-mindmap.png)
+![Portfolio map: practice, flagship systems, and public evidence](assets/diagrams/portfolio-mindmap-transparent.png)
 
 ---
 
