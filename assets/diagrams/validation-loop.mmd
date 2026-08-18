@@ -1,0 +1,19 @@
+flowchart LR
+    A["1. Instrument<br/>Build telemetry & controls"] --> B["2. Model<br/>Map an authorized technique"]
+    B --> C["3. Validate<br/>Emulate inside a controlled lab"]
+    C --> D["4. Observe<br/>Collect endpoint & network evidence"]
+    D --> E["5. Decide<br/>Triage the detection & response"]
+    E --> F["6. Harden<br/>Tune the rule, control, or playbook"]
+    F --> C
+
+    classDef blue fill:#0E2A3C,stroke:#79E2FF,color:#E7EEF7,stroke-width:2px;
+    classDef red fill:#3A1720,stroke:#FF7A8A,color:#E7EEF7,stroke-width:2px;
+    classDef violet fill:#2A1D47,stroke:#B89CFF,color:#E7EEF7,stroke-width:2px;
+    classDef green fill:#12362F,stroke:#5CF2C1,color:#E7EEF7,stroke-width:2px;
+
+    class A,D blue;
+    class B,C red;
+    class E violet;
+    class F green;
+
+    linkStyle default stroke:#9CB0C5,stroke-width:2px;

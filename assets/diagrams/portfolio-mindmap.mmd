@@ -1,0 +1,34 @@
+%%{init: {'theme':'base','themeVariables': {'background':'#07111D','primaryColor':'#0E1C2C','primaryTextColor':'#E7EEF7','primaryBorderColor':'#79E2FF','lineColor':'#9CB0C5','tertiaryColor':'#0E1C2C','clusterBkg':'#0E1C2C','clusterBorder':'#2A4560','fontFamily':'Arial'}}}%%
+flowchart TB
+    ROOT(("Yassir Zahidi"))
+
+    ROOT --> P["Purple team"]
+    ROOT --> F["Flagships"]
+    ROOT --> S["Showcase"]
+
+    P --> PS["Signal"]
+    P --> PV["Validate"]
+    P --> PH["Harden"]
+
+    F --> FD["DECEPTR"]
+    F --> FS["SIEM lab"]
+
+    S --> SA["Architecture"]
+    S --> SV["Evidence"]
+    S --> SC["Privacy"]
+
+    classDef root fill:#2A1D47,stroke:#B89CFF,color:#E7EEF7,stroke-width:3px;
+    classDef section fill:#0E1C2C,stroke:#79E2FF,color:#E7EEF7,stroke-width:2px;
+    classDef blue fill:#0E2A3C,stroke:#79E2FF,color:#E7EEF7,stroke-width:2px;
+    classDef red fill:#3A1720,stroke:#FF7A8A,color:#E7EEF7,stroke-width:2px;
+    classDef violet fill:#2A1D47,stroke:#B89CFF,color:#E7EEF7,stroke-width:2px;
+    classDef green fill:#12362F,stroke:#5CF2C1,color:#E7EEF7,stroke-width:2px;
+
+    class ROOT root;
+    class P,F,S section;
+    class PS,FD,FS blue;
+    class PV red;
+    class PH,SA,SV violet;
+    class SC green;
+
+    linkStyle default stroke:#9CB0C5,stroke-width:2px;
