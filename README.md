@@ -1,6 +1,3 @@
-[![Signal Atlas — security engineering field manual](assets/signal-atlas-hero.jpg)](https://y-zahidi.github.io)
-
-
 # Yassir Zahidi
 
 **Security engineering student building systems that turn observed behavior into evidence, decisions, and stronger controls.**
