@@ -1,6 +1,5 @@
 [![Signal Atlas — security engineering field manual](assets/signal-atlas-hero.jpg)](https://y-zahidi.github.io)
 
-![Signal Atlas mark](assets/brand/signal-atlas-mark.png)
 
 # Yassir Zahidi
 
