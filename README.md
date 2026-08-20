@@ -6,19 +6,7 @@
 >
 > Observe → Model → Validate → Harden
 
-```text
-$ whoami
- yassir-zahidi // security engineering student
-
-$ focus --current
- detection · forensics · controlled validation · hardening
-
-$ method --repeatable
- observe → model → validate → harden
-
-$ public --surface
- case files · architecture · sanitized evidence
-```
+![Animated identity shell: whoami, focus, stack, method, and availability](assets/identity-shell.gif)
 
 I build detection systems, forensic context, controlled validation, cyberdeception, data workflows, and practical software. My public repositories are **case files**: architecture, reasoning, sanitized evidence, and engineering decisions from private personal implementations.
 
