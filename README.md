@@ -6,9 +6,23 @@
 >
 > Observe → Model → Validate → Harden
 
+```text
+$ whoami
+ yassir-zahidi // security engineering student
+
+$ focus --current
+ detection · forensics · controlled validation · hardening
+
+$ method --repeatable
+ observe → model → validate → harden
+
+$ public --surface
+ case files · architecture · sanitized evidence
+```
+
 I build detection systems, forensic context, controlled validation, cyberdeception, data workflows, and practical software. My public repositories are **case files**: architecture, reasoning, sanitized evidence, and engineering decisions from private personal implementations.
 
-[Portfolio](https://y-zahidi.github.io) · [LinkedIn](https://www.linkedin.com/in/yassir-zahidi/) · [Résumé](https://y-zahidi.github.io/resume.json) · [Email](mailto:yassirzahidi8@gmail.com)
+[Portfolio](https://y-zahidi.github.io) · [LinkedIn](https://www.linkedin.com/in/yassir-zahidi/) · [Experience](https://www.linkedin.com/in/yassir-zahidi/) · [Email](mailto:yassirzahidi8@gmail.com)
 
 ---
 
